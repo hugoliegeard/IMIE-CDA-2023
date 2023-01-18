@@ -1,11 +1,20 @@
 <?php
 
+namespace App\Controller;
+
+use App\Model\Service;
+
 class DefaultController
 {
     /**
      * Page d'Accueil
      */
     public function home() {
+
+        $service = new Service();
+        $services = $service->findAll();
+        print_r($services);
+
         echo "<h1>PAGE ACCUEIL | CONTROLLER</h1>";
     }
 

@@ -5,5 +5,7 @@
  * contrôleurs de notre projet.
  */
 spl_autoload_register(function ($class) {
-    require_once "src/Controller/$class.php";
+    $class = str_replace('App', 'src', $class);
+    // echo "Tentative de chargement de : $class <br>";
+    require_once "$class.php";
 });
