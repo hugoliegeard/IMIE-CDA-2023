@@ -14,12 +14,15 @@
 require_once '../autoload.php';
 
 # Récupération des paramètres de l'URL
-$controller = ucfirst($_GET['controller']).'Controller';
-$action     = $_GET['action'];
+$controller = ucfirst($_GET['controller']) . 'Controller';
+$action = $_GET['action'];
 
 # Gestion automatique des routes
-$obj = new $controller(); // DefaultController, UserController, ...
-$obj->$action(); // -> home(), -> register(), ...
+call_user_func_array([new $controller, $action], []);
+
+// Approche Manuel
+// $obj = new $controller(); // DefaultController, UserController, ...
+// $obj->$action(); // -> home(), -> register(), ...
 
 // Approche Dynamite
 // $$controller = new $controller();
