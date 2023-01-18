@@ -10,12 +10,21 @@
 
 <?php
 
-# Chargement de l'auto-loading
-require_once '../autoload.php';
+# Chargement de l'auto-loading de composer
+use Symfony\Component\HttpFoundation\Response;
+
+require_once '../vendor/autoload.php';
+
+# Arrivée de la requête de l'utilisateur
+$request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
 # Récupération des paramètres de l'URL
-$controller = 'App\\Controller\\' . ucfirst($_GET['controller']) . 'Controller';
-$action = $_GET['action'];
+$controller = 'App\\Controller\\' . ucfirst($request->query->get('controller')) . 'Controller';
+$action = $request->query->get('action');
 
 # Gestion automatique des routes
-call_user_func_array([new $controller, $action], []);
+/** @var Response $response */
+$response = call_user_func_array([new $controller, $action], []);
+
+# Retour de la réponse à l'utilisateur
+$response->send();

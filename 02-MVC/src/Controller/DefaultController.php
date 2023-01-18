@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Service;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController
 {
@@ -13,22 +14,22 @@ class DefaultController
 
         $service = new Service();
         $services = $service->findAll();
-        print_r($services);
+        dump($services);
 
-        echo "<h1>PAGE ACCUEIL | CONTROLLER</h1>";
+        return new Response('<h1>ACCUEIL MVC</h1>');
     }
 
     /**
      * Page de services
      */
     public function services() {
-        echo "<h1>PAGE SERVICE | CONTROLLER</h1>";
+        return new Response('<h1>SERVICE MVC</h1>');
     }
 
     /**
      * Page de contacts
      */
     public function contact() {
-        echo "<h1>PAGE CONTACT | CONTROLLER</h1>";
+        return new Response('<h1>CONTACT MVC</h1>');
     }
 }
