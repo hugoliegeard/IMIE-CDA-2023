@@ -13,4 +13,8 @@
     
     # Exemple
     RewriteRule ^accueil.html index.php?controller=default&action=home [QSA,L]
+    RewriteRule ^contact.html index.php?controller=default&action=contact [QSA,L]
+    RewriteRule ^connexion.html index.php?controller=user&action=login [QSA,L]
+    RewriteRule ^deconnexion.html index.php?controller=user&action=logout [QSA,L]
     RewriteRule ^inscription.html index.php?controller=user&action=register [QSA,L]
+    RewriteRule ^admin/dashboard.html index.php?controller=admin&action=dashboard [QSA,L]
