@@ -5,7 +5,7 @@
     <li><a href="http://localhost/IMIE-CDA-2023/02-MVC/public/connexion.html">Connexion</a></li>
     <li><a href="http://localhost/IMIE-CDA-2023/02-MVC/public/deconnexion.html">Déconnexion</a></li>
     <li><a href="http://localhost/IMIE-CDA-2023/02-MVC/public/contact.html">Contact</a></li>
-    <li><a href="http://localhost/IMIE-CDA-2023/02-MVC/public/admin/dashboard.html">Administration</a></li>
+    <li><a href="http://localhost/IMIE-CDA-2023/02-MVC/public/admin/dashboard">Administration</a></li>
 </ul>
 
 <?php

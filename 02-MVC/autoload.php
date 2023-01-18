@@ -7,5 +7,5 @@
 spl_autoload_register(function ($class) {
     $class = str_replace('App', 'src', $class);
     // echo "Tentative de chargement de : $class <br>";
-    require_once "$class.php";
+    require_once str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
 });
