@@ -1,16 +1,102 @@
 {% extends "base.html.twig" %}
 
-{% block title 'Accueil' %}
-{% block meta_description 'Toutes l\'actualité française à portée de clic !' %}
+{% block stylesheets %}
+    <!-- Bootstrap css-->
+    <link  id="style" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
 
-{% block body %}
-    <h1>Accueil du Layout</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam at eos impedit incidunt laudantium molestias sed, voluptatibus. Animi, consequatur doloremque eius eum illum magnam nostrum obcaecati rerum sint sunt.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam at eos impedit incidunt laudantium molestias sed, voluptatibus. Animi, consequatur doloremque eius eum illum magnam nostrum obcaecati rerum sint sunt.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam at eos impedit incidunt laudantium molestias sed, voluptatibus. Animi, consequatur doloremque eius eum illum magnam nostrum obcaecati rerum sint sunt.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam at eos impedit incidunt laudantium molestias sed, voluptatibus. Animi, consequatur doloremque eius eum illum magnam nostrum obcaecati rerum sint sunt.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam at eos impedit incidunt laudantium molestias sed, voluptatibus. Animi, consequatur doloremque eius eum illum magnam nostrum obcaecati rerum sint sunt.</p>
+    <!-- Icons css-->
+    <link href="{{ asset('assets/plugins/web-fonts/icons.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('assets/plugins/web-fonts/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/web-fonts/plugin.css') }}" rel="stylesheet"/>
+
+    <!-- Style css-->
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+    <!-- Select2 css -->
+    <link href="{{ asset('assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet">
 {% endblock %}
 
+{% block body %}
+    <!-- Loader -->
+    <div id="global-loader">
+        <img src="{{ asset('assets/img/loader.svg') }}" class="loader-img" alt="Loader">
+    </div>
+    <!-- End Loader -->
 
+    <!-- Page -->
+    <div class="page">
 
+        <!-- Main Header-->
+        {% include 'components/_header.html.twig' %}
+        <!-- End Main Header-->
+
+        <!-- Sidemenu -->
+        {% include 'components/_nav.html.twig' %}
+        <!-- End Sidemenu -->
+
+        <!-- Main Content-->
+        <div class="main-content side-content pt-0">
+
+            <div class="main-container container-fluid">
+                <div class="inner-body">
+
+                    <!-- Page Header -->
+                    {% include 'components/_breadcrumb.html.twig' %}
+                    <!-- End Page Header -->
+
+                    <!-- Row -->
+                    <div class="row sidemenu-height">
+                        {% block content %}{% endblock %}
+                    </div>
+                    <!-- End Row -->
+
+                </div>
+            </div>
+        </div>
+        <!-- End Main Content-->
+
+        <!-- Main Footer-->
+        {% include 'components/_footer.html.twig' %}
+        <!--End Footer-->
+
+        <!-- Sidebar -->
+        {% include 'components/_sidebar.html.twig' %}
+        <!-- End Sidebar -->
+
+    </div>
+    <!-- End Page -->
+
+    <!-- Back-to-top -->
+    <a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- Jquery js-->
+    <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap js-->
+    <script src="{{ asset('assets/plugins/bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- Perfect-scrollbar js -->
+    <script src="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+
+    <!-- Sidemenu js -->
+    <script src="{{ asset('assets/plugins/sidemenu/sidemenu.js') }}" id="leftmenu"></script>
+
+    <!-- Sidebar js -->
+    <script src="{{ asset('assets/plugins/sidebar/sidebar.js') }}"></script>
+
+    <!-- Select2 js-->
+    <script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}"></script>
+    <script src="{{ asset('assets/js/select2.js') }}"></script>
+
+    <!-- Color Theme js -->
+    <script src="{{ asset('assets/js/themeColors.js') }}"></script>
+
+    <!-- Sticky js -->
+    <script src="{{ asset('assets/js/sticky.js') }}"></script>
+
+    <!-- Custom js -->
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+{% endblock %}
