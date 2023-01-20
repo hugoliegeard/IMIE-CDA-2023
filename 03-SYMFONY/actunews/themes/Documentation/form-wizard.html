@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Meta data -->
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Spruha -  Admin Panel HTML Dashboard Template">
+<meta name="author" content="Spruko Technologies Private Limited">
+<meta name="keywords" content="admin, dashboard, backend, flat, jquery, Ui, crm, admin template, responsive , bootstrap, clean, scss, modern, minimal, panel, bootstrap 5 admin dashboard, multi dashboard, bootstrap 5, admin dashboard ">
+<!-- Title -->
+<title>Spruha - Bootstrap Premium HTML Dashboard Template</title>
+<link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+<link href="assets/plugins/iconfonts/icons.css" rel="stylesheet" />
+<!-- Custom Css -->
+<link href="assets/css/main.css" rel="stylesheet">
+<!---Internal  Prism css-->
+<link href="assets/plugins/prism/prism.css" rel="stylesheet">
+<link href="assets/plugins/treeview-prism/prism.css" rel="stylesheet">
+<link href="assets/plugins/treeview-prism/prism-treeview.css" rel="stylesheet">
+<link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-blush">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="preloader">
+            <div class="spinner-layer pl-blush">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #END# Page Loader -->
+
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+<!-- #END# Overlay For Sidebars -->
+
+
+<!-- #Top Bar -->
+<section>
+    <!-- Left Sidebar -->
+		<aside id="leftsidebar" class="sidebar">
+			<!-- User Info -->
+			<div class="admin-image"> <img src="assets/images/logo-white.png" alt=""> </div>
+			<!-- Menu -->
+			<div class="menu main-sidebar">
+				<ul class="list" id="documenter_nav">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html"><i class="fe fe-airplay sidemenu-icon"></i><span
+								class="sidemenu-label">Introduction</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="folder-structure.html"><i class="fe fe-folder sidemenu-icon"></i><span
+								class="sidemenu-label">Folder structure</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="layouts.html"><i class="fe fe-layout sidemenu-icon"></i><span
+								class="sidemenu-label">Layouts</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="faqs.html"><i
+								class="fe fe-help-circle sidemenu-icon"></i><span
+								class="sidemenu-label me-5 fw-bold">Faqs</span>
+							<i class="fa fa-star float-right sidemenu-icon-2 text-warning ms-5"></i>
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link waves-effect waves-block" href="switcher.html"><i class="fe fe-grid sidemenu-icon"></i><span class="sidemenu-label">Switcher</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="gulp.html"><i class="fe fe-settings sidemenu-icon"></i><span
+								class="sidemenu-label">Gulp</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="html-structure.html"><i class="fe fe-code sidemenu-icon"></i><span
+								class="sidemenu-label">html-structure</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="apps.html"><i class="fe fe-briefcase sidemenu-icon"></i><span
+								class="sidemenu-label">Apps</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="elements.html"><i class="fe fe-aperture sidemenu-icon"></i><span
+								class="sidemenu-label">Elements</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-elements.html"><i class="fe fe-file-text sidemenu-icon"></i><span
+								class="sidemenu-label">Form-elements</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-advanced.html"><i class="fe fe-cpu sidemenu-icon"></i><span
+								class="sidemenu-label">Form-advanced</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-wizard.html"><i class="fe fe-hard-drive sidemenu-icon"></i><span
+								class="sidemenu-label">Form-wizard</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-editor.html"><i class="fe fe-edit sidemenu-icon"></i><span
+								class="sidemenu-label">Form-editor</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="maps.html"><i class="fe fe-map-pin sidemenu-icon"></i><span
+								class="sidemenu-label">Maps</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="charts.html"><i class="fe fe-pie-chart sidemenu-icon"></i><span
+								class="sidemenu-label">Charts</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="tables.html"><i class="fe fe-database sidemenu-icon"></i><span
+								class="sidemenu-label">Tables</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="icons.html"><i class="fe fe-anchor sidemenu-icon"></i><span
+								class="sidemenu-label">Icons</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="others.html"><i class="fe fe-link sidemenu-icon"></i><span
+								class="sidemenu-label">Others</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="plugins.html"><i class="fe fe-droplet sidemenu-icon"></i><span
+								class="sidemenu-label">Plugins</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="themeswitcher.html"><i class="fe fe-loader sidemenu-icon"></i><span
+								class="sidemenu-label">Theme Style</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-effect waves-block" target="_blank"
+							href=" https://spruko.com/licenses.html"><i class="fe fe-file sidemenu-icon"></i><span
+								class="sidemenu-label">Licenses</span></a>
+					</li>
+				</ul>
+			</div>
+			<!-- #Menu -->
+		</aside>
+    <!-- #END# Left Sidebar -->
+</section>
+
+<section class="content home">
+    <div class="container-fluid">
+		<div class="block-header mt-3">
+			<h3><span class="text-primary">Spruha</span> -  Bootstrap Premium HTML Dashboard Template</h3>
+		</div>
+		<div class="row clearfix">
+			<div class="col-xl-12">
+				<div class="row clearfix">
+					<div class="col-sm-12">
+						<div class="card" id="Basic-wizard">
+							<div class="body">
+								<div id="section41">
+									<h5 class="mt-0">Basic Wizard</h5>
+									<p class="mt-2">Wizard plugin that is extremely flexible, compact and feature-rich. General Form wizard HTML structure in Spruha template. Here is the Folder structure.</p>
+
+									<ul class="nav nav nav-tabs border panel-tabs main-nav-line rounded-3">
+										<li class="nav-item"><a href="#wizard" class="nav-link active" data-toggle="tab">HTML</a></li>
+										<li class="nav-item"><a href="#wizard1" class="nav-link" data-toggle="tab">JS</a></li>
+									</ul>
+									<div class="panel-body tabs-menu-body main-content-body-right border-top-0 border">
+										<div class="tab-content">
+											<div class="tab-pane active" id="wizard">
+								<!-- Prism Code -->
+<figure class="highlight clip-widget mb-0">
+<pre class="pt-0 mt-0  language-markup p-0 pl-3 m-0">
+	<code class="language-markup mt-0 pt-0">
+		<script type="html-Spruha/script">
+			<div class="card custom-card">
+				<div class="card-body">
+					<div>
+						<h6 class="main-content-label mb-1">Basic Content Wizard</h6>
+						<p class="text-muted card-sub-title">Below is an example of a basic horizontal form wizard.</p>
+					</div>
+					<div id="wizard1">
+						<h3>Login</h3>
+						<section>
+							<div class="form-group">
+								<label class="main-content-label tx-11 tx-medium tx-gray-600">Email Address</label>
+								<input class="form-control" required="" type="email">
+							</div>
+							<div class="form-group">
+								<label class="main-content-label tx-11 tx-medium tx-gray-600">Password</label>
+								<input class="form-control" required="" type="password">
+							</div>
+							<label class="ckbox">
+								<input type="checkbox"><span class="tx-13">Check me out</span>
+							</label>
+						</section>
+						<h3>New User</h3>
+						<section>
+							<div class="form-group">
+								<label class="main-content-label tx-11 tx-medium tx-gray-600">User Name</label>
+								<input class="form-control" required="" type="text">
+							</div>
+							<div class="form-group">
+								<label class="main-content-label tx-11 tx-medium tx-gray-600">Email Address</label>
+								<input class="form-control" required="" type="email">
+							</div>
+							<div class="form-group">
+								<label class="main-content-label tx-11 tx-medium tx-gray-600">Password</label>
+								<input class="form-control" required="" type="password">
+							</div>
+							<label class="ckbox">
+								<input type="checkbox"><span class="tx-13">Check me out</span>
+							</label>
+						</section>
+						<h3>End</h3>
+						<section>
+							<label class="ckbox">
+								<input type="checkbox"><span class="tx-13">I agree terms & Conditions</span>
+							</label>
+						</section>
+					</div>
+				</div>
+			</div>
+		</script>
+	</code>
+</pre>
+</figure>
+<!-- End Prism Precode -->
+											</div>
+											<div class="tab-pane" id="wizard1">
+<!-- Prism Code -->
+<figure class="highlight clip-widget mb-0">
+<pre class="language-css line-numbers language-markup ml-0 m-0">
+    <code class="language-css language-markup">
+
+
+		&lt;!-- Internal Accordion-Wizard-Form js--&gt;
+		&lt;script src="../assets/plugins/accordion-Wizard-Form/jquery.accordion-wizard.min.js"&gt;&lt;/script&gt;
+
+		&lt;!-- Internal Form-wizard js--&gt;
+		&lt;script src="../assets/js/form-wizard.js"&gt;&lt;/script&gt;
+
+		</code>
+	</pre>
+</figure>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<table class="table table-bordered mt-4">
+									<thead>
+										<tr>
+											<th>Type</th>
+											<th>URL</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>Plugin Link</strong></td>
+											<td><a href="http://www.jquery-steps.com/" target="_blank">	http://www.jquery-steps.com/</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer opened -->
+	<div class="main-footer ht-40">
+		<div class="pd-t-0-f ht-100p">
+			<span>Copyright &copy; 2022 <a href="javascript:void(0);">Spruha</a>. Designed with <span class="fa fa-heart text-danger"></span> by <a href="https://www.spruko.com/">Spruko</a> All rights reserved.</span>
+		</div>
+	</div>
+	<!-- Footer closed -->
+
+</section>
+
+<div class="color-bg">
+	<div class="sidebar__toggle" data-toggle="sidebar">
+		<a class="open-toggle" href="javascript:void(0);"><i class="fe fe-menu"></i></a>
+	</div>
+	<ul class="nav navbar-nav">
+		<li class="nav-item mr-8"><a class="btn btn-primary " href="https://1.envato.market/RA3qN" target="_blank"><i class="icon-help2"></i> Buy Now</a></li>
+		<li class="nav-item mr-8"><a class="btn btn-success" href="https://1.envato.market/MGEaN"><i class="icon-bag3"></i> Portfolio</a></li>
+		<li class="nav-item"><a class="btn btn-info mr-3" href="https://spruko.com/licenses.html" target="_blank"><i class="icon-bag3"></i> Licenses</a></li>
+	</ul>
+</div>
+
+<!-- Jquery Core Js -->
+<script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="assets/bundles/morphingsearchscripts.bundle.js"></script> <!-- morphing search Js -->
+<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
+<script src="assets/bundles/morphingscripts.bundle.js"></script><!-- morphing search page js -->
+
+<!-- Internal Prism js-->
+<script src="assets/plugins/prism/prism.js"></script>
+
+<!-- Treeview js-->
+<script src="assets/plugins/treeview-prism/prism.js"></script>
+<script src="assets/plugins/treeview-prism/prism-treeview.js"></script>
+
+<!-- Perfectscroll js-->
+<script src="assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+
+<!-- Custom js-->
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/menuspy.min.js.js"></script>
+
+<script>
+    var elm = document.querySelector('#main-menu');
+    var ms = new MenuSpy(elm);
+
+	(function () {
+
+	if (typeof self === 'undefined' || !self.Prism || !self.document) {
+		return;
+	}
+
+	/**
+	 * Class name for <pre> which is activating the plugin
+	 * @type {String}
+	 */
+	var PLUGIN_CLASS = 'line-numbers';
+
+	/**
+	 * Resizes line numbers spans according to height of line of code
+	 * @param  {Element} element <pre> element
+	 */
+	var _resizeElement = function (element) {
+		var codeStyles = getStyles(element);
+		var whiteSpace = codeStyles['white-space'];
+
+		if (whiteSpace === 'pre-wrap' || whiteSpace === 'pre-line') {
+			var codeElement = element.querySelector('code');
+			var lineNumbersWrapper = element.querySelector('.line-numbers-rows');
+			var lineNumberSizer = element.querySelector('.line-numbers-sizer');
+			var codeLines = element.textContent.split('\n');
+
+			if (!lineNumberSizer) {
+				lineNumberSizer = document.createElement('span');
+				lineNumberSizer.className = 'line-numbers-sizer';
+
+				codeElement.appendChild(lineNumberSizer);
+			}
+
+			lineNumberSizer.style.display = 'block';
+
+			codeLines.forEach(function (line, lineNumber) {
+				lineNumberSizer.textContent = line || '\n';
+				var lineSize = lineNumberSizer.getBoundingClientRect().height;
+				lineNumbersWrapper.children[lineNumber].style.height = lineSize + 'px';
+			});
+
+			lineNumberSizer.textContent = '';
+			lineNumberSizer.style.display = 'none';
+		}
+	};
+
+	/**
+	 * Returns style declarations for the element
+	 * @param {Element} element
+	 */
+	var getStyles = function (element) {
+		if (!element) {
+			return null;
+		}
+
+		return window.getComputedStyle ? getComputedStyle(element) : (element.currentStyle || null);
+	};
+
+	window.addEventListener('resize', function () {
+		Array.prototype.forEach.call(document.querySelectorAll('pre.' + PLUGIN_CLASS), _resizeElement);
+	});
+
+	Prism.hooks.add('complete', function (env) {
+		if (!env.code) {
+			return;
+		}
+
+		// works only for <code> wrapped inside <pre> (not inline)
+		var pre = env.element.parentNode;
+		// Original regex check for class, leaving it here
+		// for its redundancy check
+		var clsReg = /\s*\bline-numbers\b\s*/;
+		// New regex check for opt-out class
+		var clsRegB = /\s*\bno-line-numbers\b\s*/;
+
+		if (env.element.querySelector(".line-numbers-rows")) {
+			// Abort if line numbers already exists
+			return;
+		}
+
+		// Added to facilitate opting out
+		if (clsRegB.test(pre.className)) {
+			// Respect the opt-out
+			return;
+		}
+
+		if (clsReg.test(env.element.className)) {
+			// Remove the class "line-numbers" from the <code>
+			env.element.className = env.element.className.replace(clsReg, ' ');
+		}
+		if (!clsReg.test(pre.className)) {
+			// Add the class "line-numbers" to the <pre>
+			pre.className += ' line-numbers';
+		}
+
+		var match = env.code.match(/\n(?!$)/g);
+		var linesNum = match ? match.length + 1 : 1;
+		var lineNumbersWrapper;
+
+		var lines = new Array(linesNum + 1);
+		lines = lines.join('<span></span>');
+
+		lineNumbersWrapper = document.createElement('span');
+		lineNumbersWrapper.setAttribute('aria-hidden', 'true');
+		lineNumbersWrapper.className = 'line-numbers-rows';
+		lineNumbersWrapper.innerHTML = lines;
+
+		if (pre.hasAttribute('data-start')) {
+			pre.style.counterReset = 'linenumber ' + (parseInt(pre.getAttribute('data-start'), 10) - 1);
+		}
+
+		env.element.appendChild(lineNumbersWrapper);
+
+		_resizeElement(pre);
+	});
+
+}());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Meta data -->
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Spruha -  Admin Panel HTML Dashboard Template">
+<meta name="author" content="Spruko Technologies Private Limited">
+<meta name="keywords" content="admin, dashboard, backend, flat, jquery, Ui, crm, admin template, responsive , bootstrap, clean, scss, modern, minimal, panel, bootstrap 5 admin dashboard, multi dashboard, bootstrap 5, admin dashboard ">
+<!-- Title -->
+<title>Spruha -  Admin Panel HTML Dashboard Template</title>
+<link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+<link href="assets/plugins/iconfonts/icons.css" rel="stylesheet" />
+<!-- Custom Css -->
+<link href="assets/css/main.css" rel="stylesheet">
+<!---Internal  Prism css-->
+<link href="assets/plugins/prism/prism.css" rel="stylesheet">
+<link href="assets/plugins/treeview-prism/prism.css" rel="stylesheet">
+<link href="assets/plugins/treeview-prism/prism-treeview.css" rel="stylesheet">
+<link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-blush">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="preloader">
+            <div class="spinner-layer pl-blush">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #END# Page Loader -->
+
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+<!-- #END# Overlay For Sidebars -->
+
+
+<!-- #Top Bar -->
+<section>
+    <!-- Left Sidebar -->
+		<aside id="leftsidebar" class="sidebar">
+			<!-- User Info -->
+			<div class="admin-image"> <img src="assets/images/logo-white.png" alt=""> </div>
+			<!-- Menu -->
+			<div class="menu main-sidebar">
+				<ul class="list" id="documenter_nav">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html"><i class="fe fe-airplay sidemenu-icon"></i><span
+								class="sidemenu-label">Introduction</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="folder-structure.html"><i class="fe fe-folder sidemenu-icon"></i><span
+								class="sidemenu-label">Folder structure</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="layouts.html"><i class="fe fe-layout sidemenu-icon"></i><span
+								class="sidemenu-label">Layouts</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="faqs.html"><i
+								class="fe fe-help-circle sidemenu-icon"></i><span
+								class="sidemenu-label me-5 fw-bold">Faqs</span>
+							<i class="fa fa-star float-right sidemenu-icon-2 text-warning ms-5"></i>
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link waves-effect waves-block" href="switcher.html"><i class="fe fe-grid sidemenu-icon"></i><span class="sidemenu-label">Switcher</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="gulp.html"><i class="fe fe-settings sidemenu-icon"></i><span
+								class="sidemenu-label">Gulp</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="html-structure.html"><i class="fe fe-code sidemenu-icon"></i><span
+								class="sidemenu-label">html-structure</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="apps.html"><i class="fe fe-briefcase sidemenu-icon"></i><span
+								class="sidemenu-label">Apps</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="elements.html"><i class="fe fe-aperture sidemenu-icon"></i><span
+								class="sidemenu-label">Elements</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-elements.html"><i class="fe fe-file-text sidemenu-icon"></i><span
+								class="sidemenu-label">Form-elements</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-advanced.html"><i class="fe fe-cpu sidemenu-icon"></i><span
+								class="sidemenu-label">Form-advanced</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-wizard.html"><i class="fe fe-hard-drive sidemenu-icon"></i><span
+								class="sidemenu-label">Form-wizard</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-editor.html"><i class="fe fe-edit sidemenu-icon"></i><span
+								class="sidemenu-label">Form-editor</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="maps.html"><i class="fe fe-map-pin sidemenu-icon"></i><span
+								class="sidemenu-label">Maps</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="charts.html"><i class="fe fe-pie-chart sidemenu-icon"></i><span
+								class="sidemenu-label">Charts</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="tables.html"><i class="fe fe-database sidemenu-icon"></i><span
+								class="sidemenu-label">Tables</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="icons.html"><i class="fe fe-anchor sidemenu-icon"></i><span
+								class="sidemenu-label">Icons</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="others.html"><i class="fe fe-link sidemenu-icon"></i><span
+								class="sidemenu-label">Others</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="plugins.html"><i class="fe fe-droplet sidemenu-icon"></i><span
+								class="sidemenu-label">Plugins</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="themeswitcher.html"><i class="fe fe-loader sidemenu-icon"></i><span
+								class="sidemenu-label">Theme Style</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-effect waves-block" target="_blank"
+							href=" https://spruko.com/licenses.html"><i class="fe fe-file sidemenu-icon"></i><span
+								class="sidemenu-label">Licenses</span></a>
+					</li>
+				</ul>
+			</div>
+			<!-- #Menu -->
+		</aside>
+    <!-- #END# Left Sidebar -->
+</section>
+
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header mt-4">
+            <h3><span class="text-primary">Spruha</span> -  Bootstrap Premium HTML Dashboard Template</h3>
+        </div>
+
+		<div class="row clearfix">
+			<div class="col-sm-12">
+				<div class="card card-transparent" id="folder_structure">
+					<div class="body pb-0">
+						<h5 class="mt-0">Folder Structure</h5>
+					</div>
+					<pre><code class="language-treeview tab-size-0">assets/
+						├── css/
+						|   |-- icon-list.css
+						|   |-- style.css
+						|   |-- style.css.map
+						├── img/
+						├── js/
+						├── landing/
+						├── plugins/
+						├── scss/
+						`-- switcher/</code></pre>
+						<ul>
+							<li class="mb-3">
+							   <code>Spruha - Bootstrap Premium HTML Dashboard Template /</code> : Root template folder contain all html, js, css, scss, images
+							   and other files.
+							</li>
+							<li>
+							  <code>assets/</code> : Folder contain all the Admin Template assets which has css, js, scss, and images.
+								<ul class="folder-structure">
+									<li class="list">
+										<code>css/</code>: Folder contain assets which has complete styles.
+										<ul class="sub-structure">
+											<li><code>icon-list</code> : icon-list.css has all template icons link are importated.</li>
+											<li><code>style</code> : Main style sheet for template.</li>
+										</ul>
+									</li>
+										<li class="list">
+											<code>img/</code> : Template images.
+										</li>
+										<li class="list">
+											<code>js/</code> : Folder contain all the template pages js files.
+										</li>
+										<li class="list">
+											<code>plugins/</code> : Folder contain all template plugins.
+										</li>
+										<li class="list">
+											<code>landing/</code> : Folder contain all landing page styles of template.
+										</li>
+										<li class="list">
+											<code>scss/</code> : Folder contain all pages scss files which includes dark-theme,rtl,menustyles,headerstyles etc.
+										</li>
+										<li class="list">
+											<code>Switcher/</code> : Folder contain switcher styles scss files.
+										</li>
+								</ul>
+							</li>
+							<li class="list mt-3 mb-3"><code>gulpfile.js</code> : Gulp tasks js file.</li>
+							<li class="list"><code>package.gulp.json</code> : Gulp package json file.</li>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer opened -->
+	<div class="main-footer ht-40">
+		<div class="pd-t-0-f ht-100p">
+			<span>Copyright &copy; 2022 <a href="javascript:void(0);">Spruha</a>. Designed with <span class="fa fa-heart text-danger"></span> by <a href="https://www.spruko.com/">Spruko</a> All rights reserved.</span>
+		</div>
+	</div>
+	<!-- Footer closed -->
+</section>
+
+<div class="color-bg">
+	<div class="sidebar__toggle" data-toggle="sidebar">
+		<a class="open-toggle" href="javascript:void(0);"><i class="fe fe-menu"></i></a>
+	</div>
+	<ul class="nav navbar-nav">
+		<li class="nav-item mr-8"><a class="btn btn-primary " href="https://1.envato.market/RA3qN" target="_blank"><i class="icon-help2"></i> Buy Now</a></li>
+		<li class="nav-item mr-8"><a class="btn btn-success" href="https://1.envato.market/MGEaN"><i class="icon-bag3"></i> Portfolio</a></li>
+		<li class="nav-item"><a class="btn btn-info mr-3" href="https://spruko.com/licenses.html" target="_blank"><i class="icon-bag3"></i> Licenses</a></li>
+	</ul>
+</div>
+
+<!-- Jquery Core Js -->
+<script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="assets/bundles/morphingsearchscripts.bundle.js"></script> <!-- morphing search Js -->
+<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
+<!-- <script src="assets/bundles/morphingscripts.bundle.js"></script>morphing search page js -->
+
+<!-- Internal Prism js-->
+<script src="assets/plugins/prism/prism.js"></script>
+
+<!-- Treeview js-->
+<script src="assets/plugins/treeview-prism/prism.js"></script>
+<script src="assets/plugins/treeview-prism/prism-treeview.js"></script>
+
+<!-- Perfectscroll js-->
+<script src="assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+
+<!-- Custom js-->
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/menuspy.min.js.js"></script>
+
+<script>
+    var elm = document.querySelector('#main-menu');
+    var ms = new MenuSpy(elm);
+</script>
+
+</body>
+</html>

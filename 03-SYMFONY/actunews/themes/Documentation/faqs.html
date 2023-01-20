@@ -1,0 +1,1161 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<!-- Meta data -->
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Spruha -  Admin Panel HTML Dashboard Template">
+<meta name="author" content="Spruko Technologies Private Limited">
+<meta name="keywords" content="admin, dashboard, backend, flat, jquery, Ui, crm, admin template, responsive , bootstrap, clean, scss, themern, minimal, panel, bootstrap 5 admin dashboard, multi dashboard, bootstrap 5, admin dashboard ">
+<!-- Title -->
+<!-- Title -->
+<title>Spruha - Bootstrap Premium HTML Dashboard Template</title>
+<link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+<link href="assets/plugins/iconfonts/icons.css" rel="stylesheet" />
+<!-- Custom Css -->
+<link href="assets/css/main.css" rel="stylesheet">
+<!---Internal  Prism css-->
+<link href="assets/plugins/prism/prism.css" rel="stylesheet">
+<link href="assets/plugins/treeview-prism/prism.css" rel="stylesheet">
+<link href="assets/plugins/treeview-prism/prism-treeview.css" rel="stylesheet">
+<link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-blush">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="preloader">
+            <div class="spinner-layer pl-blush">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #END# Page Loader -->
+
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+<!-- #END# Overlay For Sidebars -->
+
+
+<!-- #Top Bar -->
+<section>
+    <!-- Left Sidebar -->
+		<aside id="leftsidebar" class="sidebar">
+			<!-- User Info -->
+			<div class="admin-image"> <img src="assets/images/logo-white.png" alt=""> </div>
+			<!-- Menu -->
+			<div class="menu main-sidebar">
+				<ul class="list" id="documenter_nav">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html"><i class="fe fe-airplay sidemenu-icon"></i><span
+								class="sidemenu-label">Introduction</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="folder-structure.html"><i class="fe fe-folder sidemenu-icon"></i><span
+								class="sidemenu-label">Folder structure</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="layouts.html"><i class="fe fe-layout sidemenu-icon"></i><span
+								class="sidemenu-label">Layouts</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="faqs.html"><i
+								class="fe fe-help-circle sidemenu-icon"></i><span
+								class="sidemenu-label me-5 fw-bold">Faqs</span>
+							<i class="fa fa-star float-right sidemenu-icon-2 text-warning ms-5"></i>
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link waves-effect waves-block" href="switcher.html"><i class="fe fe-grid sidemenu-icon"></i><span class="sidemenu-label">Switcher</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="gulp.html"><i class="fe fe-settings sidemenu-icon"></i><span
+								class="sidemenu-label">Gulp</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="html-structure.html"><i class="fe fe-code sidemenu-icon"></i><span
+								class="sidemenu-label">html-structure</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="apps.html"><i class="fe fe-briefcase sidemenu-icon"></i><span
+								class="sidemenu-label">Apps</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="elements.html"><i class="fe fe-aperture sidemenu-icon"></i><span
+								class="sidemenu-label">Elements</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-elements.html"><i class="fe fe-file-text sidemenu-icon"></i><span
+								class="sidemenu-label">Form-elements</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-advanced.html"><i class="fe fe-cpu sidemenu-icon"></i><span
+								class="sidemenu-label">Form-advanced</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-wizard.html"><i class="fe fe-hard-drive sidemenu-icon"></i><span
+								class="sidemenu-label">Form-wizard</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="form-editor.html"><i class="fe fe-edit sidemenu-icon"></i><span
+								class="sidemenu-label">Form-editor</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="maps.html"><i class="fe fe-map-pin sidemenu-icon"></i><span
+								class="sidemenu-label">Maps</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="charts.html"><i class="fe fe-pie-chart sidemenu-icon"></i><span
+								class="sidemenu-label">Charts</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="tables.html"><i class="fe fe-database sidemenu-icon"></i><span
+								class="sidemenu-label">Tables</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="icons.html"><i class="fe fe-anchor sidemenu-icon"></i><span
+								class="sidemenu-label">Icons</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="others.html"><i class="fe fe-link sidemenu-icon"></i><span
+								class="sidemenu-label">Others</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="plugins.html"><i class="fe fe-droplet sidemenu-icon"></i><span
+								class="sidemenu-label">Plugins</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="themeswitcher.html"><i class="fe fe-loader sidemenu-icon"></i><span
+								class="sidemenu-label">Theme Style</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-effect waves-block" target="_blank"
+							href=" https://spruko.com/licenses.html"><i class="fe fe-file sidemenu-icon"></i><span
+								class="sidemenu-label">Licenses</span></a>
+					</li>
+				</ul>
+			</div>
+			<!-- #Menu -->
+		</aside>
+    <!-- #END# Left Sidebar -->
+</section>
+
+<section class="content mt-4 home">
+    <div class="container-fluid">
+		<div class="row clearfix">
+			<div class="col-sm-12">
+				<div class="">
+					<div class="card" id="faqs">
+					<div class="header body pb-0">
+						<h5 class="mt-0">FAQS</h5>
+					</div>
+					<div class="card-body">
+						<div id="accordion">
+
+							<h5 class="faq mt-0">General Style</h5>
+							<div class="accordion">
+								<div class="accordion-header" data-toggle="collapse" data-target="#panel-body-1" >
+									<h4>How to Change Font Style ?</h4>
+								</div>
+								<div class="accordion-body collapse border border-top-0" id="panel-body-1" data-parent="#accordion">
+									<h5 class="mt-0">Step 1:</h5>
+									<p>Go To  <b>style.scss</b> <span class="text-primary ml-3"> (assets/scss/style.scss )</span> </p>
+									<p>if you want to change another font-family Go to the site <a href="https://fonts.google.com/">Google Fonts</a> And Select One font Family and import In to style.css file </p>
+
+									<h4>How to Select font Family</h4>
+									<h6><b>Example:</b></h6>
+									<p><img alt="" src="assets/images/0-2.jpg" class="border w-100"></p>
+									<h5>Step 2:</h5>
+									<p>And paste Your Selected font-family in style.scss</p>
+									<h6><b>Example:</b></h6>
+									@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+									<p><img alt="" src="assets/images/0-3.jpg" class="border"></p>
+									<h5>Step 3:</h5>
+									<p>And add the Your Selected font-family in _bootstrap-custom.scss(assets/scss/bootstrap/_bootstrap-custom.scss)</p>
+									<h6><b>Example:</b></h6>
+									<figure class="highlight clip-widget mb-0">
+<pre title="jQuery" class="javascript" data-codetype ="JQueryku"><code class="language-javascript">
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: left;
+	background-color: $white;
+	font-family: "Roboto", sans-serif !important;
+	background: $background;
+	color: $color;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: none;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	-webkit-font-feature-settings: "liga" 0;
+	font-feature-settings: "liga" 0;
+	overflow-y: scroll;
+	width: 100%;
+	position: relative;
+	}
+	</code>
+</pre>
+</figure>
+<p><b>Note : </b>After Changing font you must run gulp command i.e, <code>gulp watch</code> . Refer gulp page for more gulp commands <a href="gulp.html">click here.</a> </p>
+								</div>
+							</div>
+							<div class="accordion">
+								<div class="accordion-header" data-toggle="collapse" data-target="#panel-body-4">
+									<h4>How to Change Logo ?</h4>
+								</div>
+								<div class="accordion-body collapse border border-top-0" id="panel-body-4" data-parent="#accordion">
+									<p class="mb-0">Go To "<b>assets/images/brand</b>" folder and replace your logo with Previous Logos within in image size.
+									note: Please don't increase logo sizes. Replace your logo within  given image size. otherwise the logo will not fit in particular place it disturbs the template design.
+								</div>
+							</div>
+
+							<h5 class="faq">How to Enable RTL Version</h5>
+							<div class="accordion">
+								<div class="accordion-header" data-toggle="collapse" data-target="#panel-body-23">
+									<h4>How to Enable RTL Version?</h4>
+								</div>
+								<div class="accordion-body collapse border border-top-0" id="panel-body-23" data-parent="#accordion">
+									<h6 class="mt-0">Please follow the bellow steps to enable <b>RTL Version</b></h6>
+									<h6 class="mt-5"><b>Step 1 :</b></h6>
+									<p>To enable <b>RTL Version</b> you have to open <b>custom.js </b><span class="text-primary ml-2 mr-2"> ({assets/js/custom.js}</span> file  and remove comments for <code>rtl</code> as shown in below</p>
+
+									<!-- Prism Code -->
+									<figure class="highlight clip-widget mb-0">
+									<pre title="jQuery" class="javascript rounded-3" data-codetype ="JQueryku"><code class="language-javascript">
+     /* RTL version Start */
+	// $('body').addClass('rtl');
+	/* RTL version End */
+									</code></pre>
+									</figure>
+									<!-- End Prism Precode -->
+									<h6 class="mt-5"><b>Step 2 :</b></h6>
+									<span class="mb-3">Remove the comments to enable <code>rtl</code> as shown below</span>
+									<!-- Prism Code -->
+									<figure class="highlight clip-widget mb-0">
+									<pre title="jQuery" class="javascript rounded-3" data-codetype ="JQueryku"><code class="language-javascript">
+	/* RTL version Start */
+	$('body').addClass('rtl');
+	/* RTL version End */
+									</code></pre>
+									</figure>
+									<!-- End Prism Precode -->
+
+								</div>
+							</div>
+
+							<h5 class="faq">Theme Styles</h5>
+							<div class="accordion">
+								<div class="accordion-header" data-toggle="collapse" data-target="#panel-body-9">
+									<h4>How to Enable Dark Theme?</h4>
+								</div>
+								<div class="accordion-body collapse border border-top-0" id="panel-body-9" data-parent="#accordion">
+									<h6 class="mt-0">Please follow the bellow steps to enable <b>Dark Theme</b></h6>
+									<h6 class="mt-5"><b>Step 1 :</b></h6>
+									<p>To enable <b>Dark Theme</b> you have to open <b>custom.js </b><span class="text-primary ml-2 mr-2"> ({assets/js/custom.js}</span> file  and remove comments for <code>dark-theme</code> as shown in below</p>
+
+									<!-- Prism Code -->
+									<figure class="highlight clip-widget mb-0">
+									<pre title="jQuery" class="javascript rounded-3" data-codetype ="JQueryku"><code class="language-javascript">
+
+	/*Dark Theme Start*/
+	// $('body').addClass('dark-theme');
+	/*Dark Theme End*/
+
+
+
+									</code></pre>
+									</figure>
+									<!-- End Prism Precode -->
+									<h6 class="mt-5"><b>Step 2 :</b></h6>
+									<span class="mb-3">Remove the comments to enable <code>dark-theme</code> as shown below</span>
+									<!-- Prism Code -->
+									<figure class="highlight clip-widget mb-0">
+									<pre title="jQuery" class="javascript rounded-3" data-codetype ="JQueryku"><code class="language-javascript">
+
+	/*Dark Theme Start*/
+	$('body').addClass('dark-theme');
+	/*Dark Theme End*/
+
+									</code></pre>
+									</figure>
+									<!-- End Prism Precode -->
+								</div>
+							</div>
+							<div class="accordion">
+								<div class="accordion-header" data-toggle="collapse" data-target="#panel-body-24">
+									<h4>How to Enable Light Theme?</h4>
+								</div>
+								<div class="accordion-body collapse border border-top-0" id="panel-body-24" data-parent="#accordion">
+									<h6 class="mt-0">Please follow the bellow steps to enable <b>Light Theme</b></h6>
+									<h6 class="mt-5"><b>Step 1 :</b></h6>
+									<p>To enable <b>Light Theme</b> you have to open <b>custom.js </b><span class="text-primary ml-2 mr-2">({assets/js/custom.js}</span> file  and remove comments for <code>light-theme</code> as shown in below</p>
+
+									<!-- Prism Code -->
+									<figure class="highlight clip-widget mb-0">
+									<pre title="jQuery" class="javascript rounded-3" data-codetype ="JQueryku"><code class="language-javascript">
+
+	/*Light Theme Start*/
+	//$('body').addClass('light-theme');
+	/*Light Theme End*/
+
+									</code></pre>
+									</figure>
+									<!-- End Prism Precode -->
+									<h6 class="mt-5"><b>Step 2 :</b></h6>
+									<span class="mb-3">Remove the comments to enable <code>light-theme</code> as shown below</span>
+									<!-- Prism Code -->
+									<figure class="highlight clip-widget mb-0">
+									<pre title="jQuery" class="javascript rounded-3" data-codetype ="JQueryku"><code class="language-javascript">
+
+	/*Light Theme Start*/
+	$('body').addClass('light-theme');
+	/*Light Theme End*/
+
+									</code></pre>
+									</figure>
+									<!-- End Prism Precode -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+
+
+			<div class="col-xl-12">
+				<div class="row clearfix">
+					<div class="col-sm-12">
+						<div class="card  main-section" id="chart-color">
+							<div class="body">
+								<h5 class="mt-0 mb-3">How to change any chart color according to your theme color?
+								</h5>
+								<p>By default, the chart color will change based on the theme color.</p>
+								<p>You can replace the default chart with your own chart, but in order to change the
+									colors of your chart with respect to the theme colors you have to follow the
+									below steps.</p>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-color">
+										<h4>How to replace your own chart with existing chart and change colors of
+											that particular chart in Dashboard Page ?</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-color"
+										data-parent="#accordion">
+										<p><b> Note:</b> This process is only for replace your own chart in
+											index.html page</p>
+										<h6 class="mt-3">Step1:</h6>
+										<p>Go to root path: <b>assets/js/index.js</b> in that js file you will find
+											a function named as index <b>" function index(); "</b> inside of that
+											function replace the old chart js data with your new chart js data,
+											in order to change your chart color according to your themecolor then
+											add <b>" myVarVal" </b> (Ex:- myVarVal to that particular color field based on your
+											requirement.</p>
+
+										<h6 class="mt-3">Step2:</h6>
+										<p>Navigate to root path: <b>assets/js/</b> and open <b>themeColors.js</b>
+											in that js file you will find a function called <b>"(function names()
+												)"</b>
+											In that function you will find</p>
+										<code>
+											if (document.querySelector('#chartLine') !== null) {
+												index();
+											}
+									</code>
+										<p class="mt-3">Then change it's id name based on the id that you've used
+											for your particular chart.</p>
+										<p> <b>Ex:</b> How do I modify the Id in the <b>"themeColors.js"</b> file?
+										</p>
+										<ul>
+											<b class="me-2">Before :</b> <code>  " if (document.querySelector('#chartLine') !== null) {
+												index();
+											}"
+											 </code><br><br>
+											<b class="me-2"> After :</b><code> " if(document.querySelector('# your chart id') !== null){
+																sales();
+														}"
+										</code>
+
+										</ul>
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-color1">
+										<h4>How to add your new chart and change colors of that new chart according
+											to your themecolor in Other Pages ?</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-color1"
+										data-parent="#accordion">
+										<p><b>Note :</b> This process is only for adding your new chart to other
+											pages.(Skip this process if this is not your requirement)</p>
+										<p>If you want to change the color of your chart with respect to the
+											themecolor you have to follow the below steps.</p>
+										<h6 class="mt-3">Step 1:</h6>
+										<p>If you want to add any chart to any other page then follow the below
+											process.</p>
+										<p> Open js file of the particular chart that you wanted to add, in that js
+											file (for example in my case: mychart.js), and inside of that js file
+											create a new function with " unique "
+											name (for example in my case: myFunction() ), and then place the chart
+											js content inside of that function.</p>
+										<p><b>Note:</b> If there is more than one chart then you need to create
+											different functions for different charts respectively.</p>
+										<b class="me-2">Ex-1:</b><code> myFunction1() {
+
+												chart js1 content
+
+											 }
+									</code><br><br>
+										<b class="me-2">Ex-2:</b><code>myFunction2() {
+
+												chart js2 content
+
+											 }
+									</code>
+										<h6 class="mt-4 mb-3">Step 2:</h6>
+										<p>Navigate to root path: <b>assets/js/themeColors.js</b> in that js file
+											you will find a function called <b>"(function names() )"</b>
+											In that function you will find</p>
+										<code> "if (document.querySelector('#chartLine') !== null) {
+											index();
+										}"
+									</code>
+										<p class="mt-3"> Below this condition add a new condition with the <b>"id
+												name and function name"</b> that you've used in your chart js
+											(Ex: mychart.js)</p>
+										<b class="me-2">Ex:</b><code>  " if(document.querySelector('# your chart id') !== null){
+													myFunction(); =>created function for the above id
+												}"
+									</code>
+										<h6 class="mt-3">Step 3:</h6>
+										<p>If you want to change your chart <b>(Ex: mychart.js)</b> color according
+											to your themecolor then follow the below process</p>
+										<p><b>Ex :</b> Go to root path: <b>assets/js/mychart.js</b> in that js file
+											you've already created a function <b>(Ex: myFunction() )</b> inside of
+											that function there are different color values based on the chart. so,
+											if you want to change the color then add <b>" myVarVal "</b> value (Ex:- myVarVal )to that particular
+											color field based on your requirement. </p>
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+			
+		<div class="row clearfix">
+			<div class="col-sm-12">
+				<div class="">
+					<div class="card" id="faqs">
+						<div class="header body pb-0">
+							<h5 class="mt-0">FAQ'S</h5>
+						</div>
+						<div class="card-body">
+							<div id="accordion">
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-10">
+										<h4>1) How to Enable Color-header?</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-10"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>color-header</code> to enable
+											color-header style as shown in below</p>
+
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+
+/*Color Header Start*/
+// $('body').addClass('color-header');
+/*Color Header End*/
+
+</code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable <code>color-header</code>
+											as shown below</span>
+										<!-- Prism Code -->
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+/*Color Header Start*/
+$('body').addClass('color-header');
+/*Color Header End*/
+												
+
+</code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-11">
+										<h4>2) How to Enable Dark-header?</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-11"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>header-dark</code> to enable
+											header-dark style as shown in below</p>
+
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Dark Header Start*/
+												// $('body').addClass('header-dark');
+												/*Dark Header End*/
+</code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable <code>header-dark</code> as
+											shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Dark Header Start*/
+												 $('body').addClass('header-dark');
+												/*Dark Header End*/
+</code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-12">
+										<h4>3) How to Enable Light-header?</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-12"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>header-light</code> to enable
+											header-light style as shown in below</p>
+
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Light Header Start*/
+												// $('body').addClass('header-light');
+												/*Light Header End*/
+</code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable <code>header-light</code>
+											as shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Light Header Start*/
+												$('body').addClass('header-light');
+												/*Light Header End*/
+</code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-68">
+										<h4>4) How to Enable Light Menu?</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-68"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>light-menu</code> to enable
+											light-menu style as shown in below</p>
+
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Light Menu Start*/
+												// $('body').addClass('light-menu');
+												/*Light Menu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable <code>light-menu</code> as
+											shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Light Menu Start*/
+												$('body').addClass('light-menu');
+												/*Light Menu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-34445">
+										<h4>5) How to Enable Color Menu?</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-34445"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>color-menu</code> to enable
+											color-menu style as shown in below</p>
+
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Color Menu Start*/
+												// $('body').addClass('color-menu');
+												/*Color Menu End*//
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable <code>color-menu</code> as
+											shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Color Menu Start*/
+												$('body').addClass('color-menu');
+												/*Color Menu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-3447">
+										<h4>6) How to Enable Dark Menu?</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-3447"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b>
+											<code>path:(HTML/Spruha/assets/js/custom.js)</code>file and remove
+											comments for <code>dark-menu</code> to enable dark-menu style as shown
+											in below</p>
+
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Dark Menu Start*/
+												// $('body').addClass('dark-menu');
+												/*Dark Menu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable <code>dark-menu</code> as
+											shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Dark Menu Start*/
+												$('body').addClass('dark-menu');
+												/*Dark Menu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-15">
+										<h4>7) How to Enable Boxed-Layout?</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-15"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b>
+											<code>path:(HTML/Spruha/assets/js/custom.js)</code>file and remove
+											comments for <code>layout-boxed</code> to enable layout-boxed style as
+											shown in below</p>
+
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Boxed Layout Start*/
+												// $('body').addClass('layout-boxed');
+												/*Boxed Layout End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable <code>layout-boxed</code>
+											as shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Boxed Layout Start*/
+												$('body').addClass('layout-boxed');
+												/*Boxed Layout End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-18">
+										<h4>8) How to Enable Scrollable-Layout?</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-18"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>scrollable-layout</code> to enable
+											scrollable-layout style as shown in below</p>
+
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Header-Position Styles Start*/
+												// $('body').addClass('scrollable-layout');
+												/*Header-Position Styles End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable
+											<code>scrollable-layout</code> as shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Header-Position Styles Start*/
+												$('body').addClass('scrollable-layout');
+												/*Header-Position Styles End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-19">
+										<h4>9) How to Enable Sidemenu-Icon-with Text?</h4>
+									</div>
+
+									<div class="accordion-body collapse border border-top-0" id="panel-body-19"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>icontext-menu</code> to enable
+											icontext-menu style as shown in below</p>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Icon Text Sidemenu Start*/
+												// $('body').addClass('icontext-menu');
+												// icontext();
+												// $('body').addClass('main-sidebar-hide');
+												/*Icon Text Sidemenu End*/
+
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable
+											<code>icontext-menu</code> as shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Icon Text Sidemenu Start*/
+												$('body').addClass('icontext-menu');
+												icontext();
+												$('body').addClass('main-sidebar-hide');
+												/*Icon Text Sidemenu End*/
+
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-21">
+										<h4>10) How to Enable Closed-Menu?</h4>
+									</div>
+
+									<div class="accordion-body collapse border border-top-0" id="panel-body-21"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>closed-leftmenu</code> to enable
+											closed menu style as shown in below</p>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Closed Sidemenu Start*/
+												// $('body').addClass('closed-leftmenu');
+												// $('body').addClass('main-sidebar-hide');
+												/*Closed Sidemenu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable
+											<code>closed-leftmenu</code> as shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Closed Sidemenu Start*/
+												$('body').addClass('closed-leftmenu');
+												$('body').addClass('main-sidebar-hide');
+												/*Closed Sidemenu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-20">
+										<h4>11) How to Enable Icon Overlay</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-20"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>icon-overlay</code> to
+											enable Icon Overlay style as shown in below</p>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Icon Overlay Sidemenu Start*/
+												// $('body').addClass('icon-overlay');
+												// hovermenu();
+												// $('body').addClass('main-sidebar-hide');
+												/*Icon Overlay Sidemenu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable <code>icon-overlay</code>
+											as shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Icon Overlay Sidemenu Start*/
+												$('body').addClass('icon-overlay');
+												hovermenu();
+												$('body').addClass('main-sidebar-hide');
+												/*Icon Overlay Sidemenu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-200">
+										<h4>12) How to Enable Hover Submenu</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-200"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>hover-submenu</code> to enable Hover
+											submenu style as shown in below</p>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Hover Submenu Start*/
+												// $('body').addClass('hover-submenu');
+												// hovermenu();
+												// $('body').addClass('main-sidebar-hide');
+												/*Hover Submenu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable <code>hover-submenu</code>
+											as shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Hover Submenu Start*/
+												$('body').addClass('hover-submenu');
+												hovermenu();
+												$('body').addClass('main-sidebar-hide');
+												/*Hover Submenu End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-201">
+										<h4>13) How to Enable Hover Submenu style1</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-201"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>hover-submenu1</code> to enable
+											Hover submenu style1 style as shown in below</p>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Hover Submenu Style 1 Start*/
+												// $('body').addClass('hover-submenu1');
+												// hovermenu();
+												// $('body').addClass('main-sidebar-hide');
+												/*Hover Submenu Style 1 End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable
+											<code>hover-submenu1</code> as shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/*Hover Submenu Style 1 Start*/
+												$('body').addClass('hover-submenu1');
+												hovermenu();
+												$('body').addClass('main-sidebar-hide');
+												/*Hover Submenu Style 1 End*/
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-202">
+										<h4>14) How to Enable Horizontal layout</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-202"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>horizontalmenu</code> to enable
+											Horizontal layout style as shown in below</p>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/* Horizontal Menu Start */
+												// $('body').addClass('horizontalmenu');
+												/*Horizontal Menu End */
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable
+											<code>horizontalmenu</code> as shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												/* Horizontal Menu Start */
+												$('body').addClass('horizontalmenu');
+												/*Horizontal Menu End */
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="accordion-header" data-toggle="collapse"
+										data-target="#panel-body-203">
+										<h4>15) How to Enable Horizontal Hover layout</h4>
+									</div>
+									<div class="accordion-body collapse border border-top-0" id="panel-body-203"
+										data-parent="#accordion">
+										<p> open <b>custom.js</b> <code>path:(HTML/Spruha/assets/js/custom.js)</code>
+											file and remove comments for <code>horizontalmenu-hover</code> to
+											enable Horizontal Hover layout style as shown in below</p>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												* Horizontal Hover Menu Start */
+												// $('body').addClass('horizontalmenu-hover');
+												/* Horizontal Hover Menu End */
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+										<span class="mb-3">Remove the comments to enable
+											<code>horizontalmenu-hover</code> as shown below</span>
+										<!-- Prism Code -->
+										<figure class="highlight clip-widget mb-0">
+											<pre title="jQuery" class="javascript" data-codetype="JQueryku"><code class="language-javascript">
+												* Horizontal Hover Menu Start */
+												 $('body').addClass('horizontalmenu-hover');
+												/* Horizontal Hover Menu End */
+</script></code></pre>
+										</figure>
+										<!-- End Prism Precode -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="color-bg">
+	<div class="sidebar__toggle" data-toggle="sidebar">
+		<a class="open-toggle" href="javascript:void(0);"><i class="fe fe-menu"></i></a>
+	</div>
+	<ul class="nav navbar-nav">
+		<li class="nav-item mr-8"><a class="btn btn-primary " href="https://1.envato.market/RA3qN" target="_blank"><i class="icon-help2"></i> Buy Now</a></li>
+		<li class="nav-item mr-8"><a class="btn btn-success" href="https://1.envato.market/MGEaN"><i class="icon-bag3"></i> Portfolio</a></li>
+		<li class="nav-item"><a class="btn btn-info mr-3" href="https://spruko.com/licenses.html" target="_blank"><i class="icon-bag3"></i> Licenses</a></li>
+	</ul>
+</div>
+
+<!-- Jquery Core Js -->
+<script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="assets/bundles/morphingsearchscripts.bundle.js"></script> <!-- morphing search Js -->
+<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
+<script src="assets/bundles/morphingscripts.bundle.js"></script><!-- morphing search page js -->
+
+<!-- Internal Prism js-->
+<script src="assets/plugins/prism/prism.js"></script>
+
+<!-- Treeview js-->
+<script src="assets/plugins/treeview-prism/prism.js"></script>
+<script src="assets/plugins/treeview-prism/prism-treeview.js"></script>
+
+<!-- Perfectscroll js-->
+<script src="assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+
+<!-- Custom js-->
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/menuspy.min.js.js"></script>
+
+<script>
+    var elm = document.querySelector('#main-menu');
+    var ms = new MenuSpy(elm);
+
+	(function () {
+
+	if (typeof self === 'undefined' || !self.Prism || !self.document) {
+		return;
+	}
+
+	/**
+	 * Class name for <pre> which is activating the plugin
+	 * @type {String}
+	 */
+	var PLUGIN_CLASS = 'line-numbers';
+
+	/**
+	 * Resizes line numbers spans according to height of line of code
+	 * @param  {Element} element <pre> element
+	 */
+	var _resizeElement = function (element) {
+		var codeStyles = getStyles(element);
+		var whiteSpace = codeStyles['white-space'];
+
+		if (whiteSpace === 'pre-wrap' || whiteSpace === 'pre-line') {
+			var codeElement = element.querySelector('code');
+			var lineNumbersWrapper = element.querySelector('.line-numbers-rows');
+			var lineNumberSizer = element.querySelector('.line-numbers-sizer');
+			var codeLines = element.textContent.split('\n');
+
+			if (!lineNumberSizer) {
+				lineNumberSizer = document.createElement('span');
+				lineNumberSizer.className = 'line-numbers-sizer';
+
+				codeElement.appendChild(lineNumberSizer);
+			}
+
+			lineNumberSizer.style.display = 'block';
+
+			codeLines.forEach(function (line, lineNumber) {
+				lineNumberSizer.textContent = line || '\n';
+				var lineSize = lineNumberSizer.getBoundingClientRect().height;
+				lineNumbersWrapper.children[lineNumber].style.height = lineSize + 'px';
+			});
+
+			lineNumberSizer.textContent = '';
+			lineNumberSizer.style.display = 'none';
+		}
+	};
+
+	/**
+	 * Returns style declarations for the element
+	 * @param {Element} element
+	 */
+	var getStyles = function (element) {
+		if (!element) {
+			return null;
+		}
+
+		return window.getComputedStyle ? getComputedStyle(element) : (element.currentStyle || null);
+	};
+
+	window.addEventListener('resize', function () {
+		Array.prototype.forEach.call(document.querySelectorAll('pre.' + PLUGIN_CLASS), _resizeElement);
+	});
+
+	Prism.hooks.add('complete', function (env) {
+		if (!env.code) {
+			return;
+		}
+
+		// works only for <code> wrapped inside <pre> (not inline)
+		var pre = env.element.parentNode;
+		// Original regex check for class, leaving it here
+		// for its redundancy check
+		var clsReg = /\s*\bline-numbers\b\s*/;
+		// New regex check for opt-out class
+		var clsRegB = /\s*\bno-line-numbers\b\s*/;
+
+		if (env.element.querySelector(".line-numbers-rows")) {
+			// Abort if line numbers already exists
+			return;
+		}
+
+		// Added to facilitate opting out
+		if (clsRegB.test(pre.className)) {
+			// Respect the opt-out
+			return;
+		}
+
+		if (clsReg.test(env.element.className)) {
+			// Remove the class "line-numbers" from the <code>
+			env.element.className = env.element.className.replace(clsReg, ' ');
+		}
+		if (!clsReg.test(pre.className)) {
+			// Add the class "line-numbers" to the <pre>
+			pre.className += ' line-numbers';
+		}
+
+		var match = env.code.match(/\n(?!$)/g);
+		var linesNum = match ? match.length + 1 : 1;
+		var lineNumbersWrapper;
+
+		var lines = new Array(linesNum + 1);
+		lines = lines.join('<span></span>');
+
+		lineNumbersWrapper = document.createElement('span');
+		lineNumbersWrapper.setAttribute('aria-hidden', 'true');
+		lineNumbersWrapper.className = 'line-numbers-rows';
+		lineNumbersWrapper.innerHTML = lines;
+
+		if (pre.hasAttribute('data-start')) {
+			pre.style.counterReset = 'linenumber ' + (parseInt(pre.getAttribute('data-start'), 10) - 1);
+		}
+
+		env.element.appendChild(lineNumbersWrapper);
+
+		_resizeElement(pre);
+	});
+
+}());
+</script>
+
+</body>
+</html>
