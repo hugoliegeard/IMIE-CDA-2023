@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+
+    <a href="{{ path('app_test') }}">Lien vers test</a>
+    <a href="{{ path('test_id', {id: 13}) }}">Lien vers test_id</a>
+
+    <h1>Hello {{ id }}! ✅</h1>
+    {{ dump(id) }}
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/formation/imie/cda2023/IMIE-CDA-2023/03-SYMFONY/actunews/src/Controller/TestController.php'|file_link(0) }}">src/Controller/TestController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/wamp64/www/formation/imie/cda2023/IMIE-CDA-2023/03-SYMFONY/actunews/templates/test/index.html.twig'|file_link(0) }}">templates/test/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}

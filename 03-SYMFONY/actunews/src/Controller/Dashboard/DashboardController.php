@@ -12,5 +12,6 @@ class DashboardController extends AbstractController
     public function home()
     {
         return $this->render('layout.html.twig');
+        //return $this->json(['username' => 'jane.doe']);
     }
 }
