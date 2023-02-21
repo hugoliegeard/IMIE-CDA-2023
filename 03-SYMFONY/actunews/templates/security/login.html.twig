@@ -1,42 +1,109 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+		<!-- Loader -->
+		<div id="global-loader">
+			<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+		</div>
+		<!-- End Loader -->
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+		<!-- Page -->
+		<div class="page main-signin-wrapper">
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+			<!-- Row -->
+			<div class="row signpages text-center">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="row row-sm">
+							<div class="col-lg-6 col-xl-5 d-none d-lg-block text-center bg-primary details">
+								<div class="mt-5 pt-4 p-2 pos-absolute">
+									<img src="../assets/img/brand/logo-light.png" class="d-lg-none header-brand-img text-start float-start mb-4 error-logo-light" alt="logo">
+									<img src="../assets/img/brand/logo.png" class=" d-lg-none header-brand-img text-start float-start mb-4 error-logo" alt="logo">
+									<div class="clearfix"></div>
+									<img src="../assets/img/svgs/user.svg" class="ht-100 mb-0" alt="user">
+									<h5 class="mt-4 text-white">Create Your Account</h5>
+									<span class="tx-white-6 tx-13 mb-5 mt-xl-0">Signup to create, discover and connect with the global community</span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-xl-7 col-xs-12 col-sm-12 login_form ">
+								<div class="main-container container-fluid">
+									<div class="row row-sm">
+										<div class="card-body mt-2 mb-2">
+											<img src="../assets/img/brand/logo.png" class=" d-lg-none header-brand-img text-start float-start mb-4" alt="logo">
+											<div class="clearfix"></div>
+                                            <!--
+											<form>
+												<h5 class="text-start mb-2">Signin to Your Account</h5>
+												<p class="mb-4 text-muted tx-13 ms-0 text-start">Signin to create, discover and connect with the global community</p>
+												<div class="form-group text-start">
+													<label>Email</label>
+													<input class="form-control" placeholder="Enter your email" type="text">
+												</div>
+												<div class="form-group text-start">
+													<label>Password</label>
+													<input class="form-control" placeholder="Enter your password" type="password">
+												</div>
+												<button class="btn ripple btn-main-primary btn-block">Sign In</button>
+											</form>
+                                            -->
+                                            <form method="post">
+                                                {% if error %}
+                                                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                                {% endif %}
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
+                                                {% if app.user %}
+                                                    <div class="mb-3">
+                                                        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                                                    </div>
+                                                {% endif %}
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
+                                                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                                                <label for="inputEmail">Email</label>
+                                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                                                <label for="inputPassword">Password</label>
+                                                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+                                                <input type="hidden" name="_csrf_token"
+                                                    value="{{ csrf_token('authenticate') }}"
+                                                >
+
+                                                {#
+                                                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                                                    See https://symfony.com/doc/current/security/remember_me.html
+
+                                                    <div class="checkbox mb-3">
+                                                        <label>
+                                                            <input type="checkbox" name="_remember_me"> Remember me
+                                                        </label>
+                                                    </div>
+                                                #}
+
+                                                <button class="btn btn-lg btn-primary" type="submit">
+                                                    Sign in
+                                                </button>
+                                            </form>
+
+											<div class="text-start mt-5 ms-0">
+												<div class="mb-1"><a href="{{ path('app_forgot_password_request') }}">Forgot password?</a></div>
+												<div>Don't have an account? <a href="{{ path('app_register') }}">Register Here</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Row -->
+
+		</div>
+		<!-- End Page -->
+
+
+
+
 {% endblock %}

@@ -1,9 +1,8 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Reset your password{% endblock %}
 
 {% block body %}
-
 		<!-- Loader -->
 		<div id="global-loader">
 			<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
@@ -19,11 +18,11 @@
 					<div class="card">
 						<div class="row row-sm">
 							<div class="col-lg-6 col-xl-5 d-none d-lg-block text-center bg-primary details">
-								<div class="mt-5 pt-5 p-2 pos-absolute">
+								<div class="mt-4 pt-5 p-2 pos-absolute">
 									<img src="../assets/img/brand/logo-light.png" class="header-brand-img mb-4" alt="logo">
 									<div class="clearfix"></div>
 									<img src="../assets/img/svgs/user.svg" class="ht-100 mb-0" alt="user">
-									<h5 class="mt-4 text-white">Create Your Account</h5>
+									<h5 class="mt-4 text-white">Reset Your Password</h5>
 									<span class="tx-white-6 tx-13 mb-5 mt-xl-0">Signup to create, discover and connect with the global community</span>
 								</div>
 							</div>
@@ -34,38 +33,30 @@
 											<img src="../assets/img/brand/logo-light.png" class="d-lg-none header-brand-img text-start float-start mb-4 error-logo-light" alt="logo">
 											<img src="../assets/img/brand/logo.png" class=" d-lg-none header-brand-img text-start float-start mb-4 error-logo" alt="logo">
 											<div class="clearfix"></div>
-											<h5 class="text-start mb-2">Signup for Free</h5>
+											<h5 class="text-start mb-2">Reset Your Password</h5>
 											<p class="mb-4 text-muted tx-13 ms-0 text-start">It's free to signup and only takes a minute.</p>
                                             <!--
 											<form>
-												<div class="form-group text-start">
-													<label>Name</label>
-													<input class="form-control" placeholder="Enter your Name" type="text">
-												</div>
 												<div class="form-group text-start">
 													<label>Email</label>
 													<input class="form-control" placeholder="Enter your email" type="text">
 												</div>
 												<div class="form-group text-start">
-													<label>Password</label>
+													<label>New Password</label>
 													<input class="form-control" placeholder="Enter your password" type="password">
 												</div>
-												<button class="btn ripple btn-main-primary btn-block">Create Account</button>
+												<div class="form-group text-start">
+													<label>Confirm Password</label>
+													<input class="form-control" placeholder="Enter your password" type="password">
+												</div>
+												<button class="btn ripple btn-main-primary btn-block">Reset Password</button>
 											</form>
                                             -->
-                                            {{ form_start(registrationForm) }}
-                                                {{ form_row(registrationForm.email) }}
-                                                {{ form_row(registrationForm.plainPassword, {
-                                                    label: 'Password'
-                                                }) }}
-                                                {{ form_row(registrationForm.agreeTerms) }}
+                                            {{ form_start(resetForm) }}
+                                                {{ form_row(resetForm.plainPassword) }}
+                                                <button class="btn btn-primary">Reset password</button>
+                                            {{ form_end(resetForm) }}
 
-                                                <button type="submit" class="btn">Register</button>
-                                            {{ form_end(registrationForm) }}
-
-											<div class="text-start mt-5 ms-0">
-												<p class="mb-0">Already have an account? <a href="{{ path('app_login') }}">Sign In</a></p>
-											</div>
 										</div>
 									</div>
 								</div>
@@ -76,15 +67,9 @@
 			</div>
 			<!-- End Row -->
 
+
+
 		</div>
 		<!-- End Page -->
-
-
-
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
-
-    <h1>Register</h1>
 
 {% endblock %}
