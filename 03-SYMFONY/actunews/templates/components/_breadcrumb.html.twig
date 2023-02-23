@@ -1,9 +1,9 @@
 <div class="page-header">
     <div>
-        <h2 class="main-content-title tx-24 mg-b-5">Empty Page</h2>
+        <h2 class="main-content-title tx-24 mg-b-5">{% block title %}TEST{% endblock %}</h2>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Empty Page</li>
+            <li class="breadcrumb-item">{% block module %}sfdfd{% endblock %}</li>
+            <li class="breadcrumb-item active" aria-current="page">{% block action %}dfsd{% endblock %}</li>
         </ol>
     </div>
     {# <div class="d-flex">

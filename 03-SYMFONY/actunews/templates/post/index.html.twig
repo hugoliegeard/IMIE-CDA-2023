@@ -1,0 +1,79 @@
+{% extends 'layout.html.twig' %}
+
+{% block final_stylesheets %}
+		<!-- DATA TABLE CSS -->
+		<link href="{{ asset('assets/plugins/datatable/css/dataTables.bootstrap5.css') }}" rel="stylesheet" />
+		<link href="{{ asset('assets/plugins/datatable/css/buttons.bootstrap5.min.css') }}"  rel="stylesheet">
+		<link href="{{ asset('assets/plugins/datatable/css/responsive.bootstrap5.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}Liste des articles{% endblock %}
+{% block module %}Article{% endblock %}
+{% block action %}Création{% endblock %}
+
+{% block content %}
+
+						<!-- Row -->
+						<div class="row row-sm">
+							<div class="col-lg-12">
+								<div class="card custom-card">
+									<div class="card-body">
+										<div>
+											<h6 class="main-content-label mb-1">Responsive DataTable</h6>
+											<p class="text-muted card-sub-title">Responsive is an extension for DataTables that resolves that problem by optimising the table's layout for different screen sizes through the dynamic insertion and removal of columns from the table.</p>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered" id="example2">
+												<thead>
+													<tr>
+														<th class="wd-20p">Name</th>
+														<th class="wd-25p">Position</th>
+														<th class="wd-20p">Office</th>
+														<th class="wd-15p">Age</th>
+														<th class="wd-20p">Salary</th>
+													</tr>
+												</thead>
+												<tbody>
+                                                
+													<tr>
+														<td>Tiger Nixon</td>
+														<td>System Architect</td>
+														<td>Edinburgh</td>
+														<td>61</td>
+														<td>$320,800</td>
+													</tr>
+
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- End Row -->
+
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+        <img src="{{ post.image }}">
+        {{ post.content }}
+    {% endfor %}
+
+{% endblock %}
+
+{% block final_javascripts %}
+<!-- Internal Data Table js -->
+		<script src="{{ asset('assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/dataTables.buttons.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/buttons.bootstrap5.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/jszip.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/pdfmake/pdfmake.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/pdfmake/vfs_fonts.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/buttons.html5.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/buttons.print.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/buttons.colVis.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+		<script src="{{ asset('assets/js/table-data.js') }}"></script>
+		<script src="{{ asset('assets/js/select2.js') }}"></script>
+{% endblock %}

@@ -10,9 +10,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+#[Route('/admin/category', name: 'admin_category_')]
 class CategoryController extends AbstractController
 {
-    #[Route('/category', name: 'app_category')]
+    #[Route('/', name: 'index')]
     public function index(): Response
     {
         return $this->render('category/index.html.twig', [
@@ -20,7 +21,7 @@ class CategoryController extends AbstractController
         ]);
     }
 
-    #[Route('/category/add', name: 'category_add')]
+    #[Route('/add', name: 'add')]
     public function addCategory(Request $request, ManagerRegistry $doctrine): Response
     {
         $category = new Category();

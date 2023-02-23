@@ -7,7 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardController extends AbstractController
 {
-    #[Route('/dashboard', name: 'dashboard_home', methods: 'GET')]
+    #[Route('/admin', name: 'admin_home', methods: 'GET')]
     # https://localhost:8000/dashboard
     public function home()
     {
