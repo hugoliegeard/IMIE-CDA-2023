@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page test fiche{% endblock %}
+
+{% block body %}
+
+        <h2>{{ post.title }}</h2>
+        <div>Rédigé par :  {{ post.user.displayName }}{# dump(post.user) #}</div>
+        <div>Rangé dans : {{ post.category }}</div>
+        <img src="{{ post.image }}" width="200">
+        <div>{{ post.createdAt | ago }}</div>
+        <div>{{ post.content | raw }}</div>
+
+{% endblock %}

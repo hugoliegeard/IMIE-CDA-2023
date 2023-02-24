@@ -7,8 +7,8 @@
 		<link href="{{ asset('assets/plugins/datatable/css/responsive.bootstrap5.css') }}" rel="stylesheet" />
 {% endblock %}
 
-{% block title %}Liste des articles{% endblock %}
-{% block module %}Article{% endblock %}
+{% block title %}Liste des utilisateurs{% endblock %}
+{% block module %}Utilisateurs{% endblock %}
 {% block action %}Liste{% endblock %}
 
 {% block content %}
@@ -29,22 +29,22 @@
 								<thead>
 									<tr>
 										<th class="wd-20p">Id</th>
-										<th class="wd-25p">Image</th>
-										<th class="wd-15p">Titre</th>
-										<th class="wd-20p">Date</th>
-										<th class="wd-15p">Auteur</th>
+										<th class="wd-25p">Nom</th>
+										<th class="wd-15p">Mail</th>
+										<th class="wd-15p">Vérifié ?</th>
+										<th class="wd-20p">Articles</th>
 										<th class="wd-20p">Actions</th>
 									</tr>
 								</thead>
 								<tbody>
 
-									{% for post in posts %}
+									{% for user in users %}
 										<tr>
-											<td>{{ post.id }}</td>
-											<td><img src="{{ post.image }}"></td>
-											<td>{{ post.title }}</td>
-											<td>{{ post.createdAt | date }}</td>
-											<td>{{ post.user.displayName }}</td>
+											<td>{{ user.id }}</td>
+											<td>{{ user.displayName }}</td>
+											<td>{{ user.email }}</td>
+											<td>{{ user.isVerified == false ? 'Non vérifiée' : 'Vérifiée' }}</td>
+											<td>{{ user.posts | length }}</td>
 											<td></td>
 										</tr>
 									{% endfor %}
@@ -57,14 +57,6 @@
 			</div>
 		</div>
 		<!-- End Row -->
-
-    <!--
-    {% for post in posts %}
-        <h2>{{ post.title }}</h2>
-        <img src="{{ post.image }}">
-        {{ post.content }}
-    {% endfor %}
-    -->
 
 {% endblock %}
 

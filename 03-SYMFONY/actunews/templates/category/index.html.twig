@@ -1,20 +1,76 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}Hello CategoryController!{% endblock %}
+{% block final_stylesheets %}
+		<!-- DATA TABLE CSS -->
+		<link href="{{ asset('assets/plugins/datatable/css/dataTables.bootstrap5.css') }}" rel="stylesheet" />
+		<link href="{{ asset('assets/plugins/datatable/css/buttons.bootstrap5.min.css') }}"  rel="stylesheet">
+		<link href="{{ asset('assets/plugins/datatable/css/responsive.bootstrap5.css') }}" rel="stylesheet" />
+{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block title %}Liste des categories{% endblock %}
+{% block module %}Catégories{% endblock %}
+{% block action %}Liste{% endblock %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block content %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/formation/imie/cda2023/IMIE-CDA-2023/03-SYMFONY/actunews/src/Controller/CategoryController.php'|file_link(0) }}">src/Controller/CategoryController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/formation/imie/cda2023/IMIE-CDA-2023/03-SYMFONY/actunews/templates/category/index.html.twig'|file_link(0) }}">templates/category/index.html.twig</a></code></li>
-    </ul>
-</div>
+		<!-- Row -->
+		<div class="row row-sm">
+			<div class="col-lg-12">
+				<div class="card custom-card">
+					<div class="card-body">
+                        <!--
+						<div>
+							<h6 class="main-content-label mb-1">Responsive DataTable</h6>
+							<p class="text-muted card-sub-title">Responsive is an extension for DataTables that resolves that problem by optimising the table's layout for different screen sizes through the dynamic insertion and removal of columns from the table.</p>
+						</div>
+                        -->
+						<div class="table-responsive">
+							<table class="table table-bordered" id="example2">
+								<thead>
+									<tr>
+										<th class="wd-20p">Id</th>
+										<th class="wd-25p">Nom</th>
+										<th class="wd-20p">Slug</th>
+										<th class="wd-20p">Articles</th>
+										<th class="wd-20p">Actions</th>
+									</tr>
+								</thead>
+								<tbody>
+
+									{% for category in categories %}
+										<tr>
+											<td>{{ category.id }}</td>
+											<td>{{ category.name }}</td>
+											<td>{{ category.slug }}</td>
+											<td>{{ category.posts | length }}</td>
+										</tr>
+									{% endfor %}
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Row -->
+
+{% endblock %}
+
+{% block final_javascripts %}
+<!-- Internal Data Table js -->
+		<script src="{{ asset('assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/dataTables.buttons.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/buttons.bootstrap5.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/jszip.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/pdfmake/pdfmake.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/pdfmake/vfs_fonts.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/buttons.html5.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/buttons.print.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/js/buttons.colVis.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+		<script src="{{ asset('assets/js/table-data.js') }}"></script>
+		<script src="{{ asset('assets/js/select2.js') }}"></script>
 {% endblock %}
