@@ -1,10 +1,11 @@
 ETQ visiteur JV consulter des articles
 ETQ visiteur JV m'inscrire POUR devenir membre (utilisateur)
+
 ETQ visiteur inscrit JV m'identifier sur le site
+ETQ visiteur inscrit JV réinitialiser mon password
 
 ETQ utilisateur JV me déconnecter du site
 ETQ utilisateur JV supprimer mon compte et mes contenus associés
-ETQ utilisateur JV réinitialiser mon password
 ETQ utilisateur JV proposer/modifier/supprimer mes articles
 ETQ utilisateur JV commenter les articles
 
