@@ -1,8 +1,8 @@
 ETQ visiteur JV consulter des articles
-ETQ visiteur JV m'inscrire POUR devenir membre (utilisateur)
+  ETQ visiteur JV m'inscrire POUR devenir membre (utilisateur)
 
-ETQ visiteur inscrit JV m'identifier sur le site
-ETQ visiteur inscrit JV réinitialiser mon password
+  ETQ visiteur inscrit JV m'identifier sur le site
+  ETQ visiteur inscrit JV réinitialiser mon password
 
 ETQ utilisateur JV me déconnecter du site
 ETQ utilisateur JV supprimer mon compte et mes contenus associés

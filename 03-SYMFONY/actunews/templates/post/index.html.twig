@@ -45,7 +45,10 @@
 											<td>{{ post.title }}</td>
 											<td>{{ post.createdAt | date }}</td>
 											<td>{{ post.user.displayName }}</td>
-											<td></td>
+											<td>
+												<a href="{{ path('admin_post_update', {id: post.id}) }}" class="btn btn-primary btn-sm">Modifier</a>
+												<a href="{{ path('admin_post_delete', {id: post.id}) }}" class="btn btn-primary btn-sm" onclick="return confirm('Etes-vous certain ?')">Supprimer</a>
+											</td>
 										</tr>
 									{% endfor %}
 

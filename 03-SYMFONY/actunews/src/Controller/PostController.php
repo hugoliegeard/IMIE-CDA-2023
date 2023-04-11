@@ -38,11 +38,42 @@ class PostController extends AbstractController
             $em = $doctrine->getManager();
             $em->persist($post);
             $em->flush();
-            return $this->redirectToRoute('home');
+            $this->addFlash('success', 'Article créé !');
+            return $this->redirectToRoute('admin_post_index');
         }
 
         return $this->render('post/add.html.twig', [
             'formu' => $form->createView(),
         ]);
+    }
+
+    #[Route('/update/{id}', name: 'update')]
+    public function updatePost(Post $post, Request $request, ManagerRegistry $doctrine): Response
+    {
+        $form = $this->createForm(PostType::class, $post);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            //$post->setUser($this->getUser());
+            //$post->setActive(false);
+            $em = $doctrine->getManager();
+            $em->flush();
+            $this->addFlash('success', 'Article modifié !');
+            return $this->redirectToRoute('admin_post_index');
+        }
+
+        return $this->render('post/add.html.twig', [
+            'formu' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/delete/{id}', name: 'delete')]
+    public function delete(Post $post, ManagerRegistry $doctrine): Response
+    {
+        $em = $doctrine->getManager();
+        $em->remove($post);
+        $em->flush();
+        $this->addFlash('success', 'Article supprimé !');
+        return $this->redirectToRoute('admin_post_index');
     }
 }

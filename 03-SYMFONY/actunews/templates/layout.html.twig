@@ -44,6 +44,14 @@
                     {% include 'components/_breadcrumb.html.twig' %}
                     <!-- End Page Header -->
 
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success" role="alert">{{ message }}</div>
+                    {% endfor %}       
+
+                    {% for message in app.flashes('danger') %}
+                        <div class="alert alert-danger" role="alert">{{ message }}</div>
+                    {% endfor %}       
+
                     <!-- Row -->
                     <div class="row sidemenu-height">
                         {% block content %}{% endblock %}

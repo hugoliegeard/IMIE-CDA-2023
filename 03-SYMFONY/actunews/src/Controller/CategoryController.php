@@ -35,11 +35,40 @@ class CategoryController extends AbstractController
             $em = $doctrine->getManager();
             $em->persist($category);
             $em->flush();
-            return $this->redirectToRoute('admin_home');
+            $this->addFlash('success', 'Catégorie créée !');
+            return $this->redirectToRoute('admin_category_index');
         }
 
         return $this->render('category/add.html.twig', [
             'formu' => $form->createView(),
         ]);
+    }
+
+    #[Route('/update/{id}', name: 'update')]
+    public function updateCategory(Category $category, Request $request, ManagerRegistry $doctrine): Response
+    {
+        $form = $this->createForm(CategoryType::class, $category);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $doctrine->getManager();
+            $em->flush();
+            $this->addFlash('success', 'Catégorie modifiée !');
+            return $this->redirectToRoute('admin_category_index');
+        }
+
+        return $this->render('category/add.html.twig', [
+            'formu' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/delete/{id}', name: 'delete')]
+    public function delete(Category $category, ManagerRegistry $doctrine): Response
+    {
+        $em = $doctrine->getManager();
+        $em->remove($category);
+        $em->flush();
+        $this->addFlash('success', 'Catégorie supprimée !');
+        return $this->redirectToRoute('admin_category_index');
     }
 }

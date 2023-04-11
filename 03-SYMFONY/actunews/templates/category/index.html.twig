@@ -43,6 +43,8 @@
 											<td>{{ category.name }}</td>
 											<td>{{ category.slug }}</td>
 											<td>{{ category.posts | length }}</td>
+											<td><a href="{{ path('admin_category_update', {id: category.id}) }}" class="btn btn-primary btn-sm">Modifier</a></td>
+											<td><a href="{{ path('admin_category_delete', {id: category.id}) }}" class="btn btn-primary btn-sm" onclick="return confirm('Etes-vous certain ?')">Supprimer</a></td>
 										</tr>
 									{% endfor %}
 

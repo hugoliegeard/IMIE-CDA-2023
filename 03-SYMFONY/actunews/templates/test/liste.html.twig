@@ -4,6 +4,22 @@
 
 {% block body %}
 
+    <ul>
+    {% if not is_granted("ROLE_USER") %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_login') }}">Login</a>
+        </li>
+    {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+        </li>
+    {% endif %}
+    </ul>
+
+    <h2>Liste principale des articles</h2>
     {% for post in posts %}
         <!--<a href="{# path('fiche', {id: post.id}) #}">-->
         <a href="{{ path('fiche', {slug: post.slug}) }}">
@@ -15,5 +31,13 @@
         <div>{{ post.createdAt | ago }}</div>
         <div>{{ post.content | u.truncate(150, '...') | raw }}</div>
     {% endfor %}
+
+    <h2>Liste des anciens articles</h2>
+    {% for oldPost in oldPosts %}
+        <a href="{{ path('fiche', {slug: oldPost.slug}) }}">
+            <h2>{{ oldPost.title }}</h2>
+        </a>
+    {% endfor %}
+
 
 {% endblock %}

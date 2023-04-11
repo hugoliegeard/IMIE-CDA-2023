@@ -27,11 +27,16 @@ class TestController extends AbstractController
     #[Route('/liste', name: 'liste')]
     public function liste(PostRepository $postRepository): Response
     {
-        $posts = $postRepository->findAll();
+        //$posts = $postRepository->findAll();
+        $posts = $postRepository->findLastPosts();
         //dd($posts);
 
+        $oldPosts = $postRepository->findOldPosts(1);
+        //dd($oldPosts);
+
         return $this->render('test/liste.html.twig', [
-            'posts' => $posts,
+            'posts' => $posts,  
+            'oldPosts' => $oldPosts,
         ]);
     }
 
