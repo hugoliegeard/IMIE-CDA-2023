@@ -6,8 +6,7 @@
 
 {% block content %}
 
-    <h1>My profile</h1>
-
+    <h2>Mes informations</h2>
     <div>Email : {{ user.email }}</div>
     <div>Vérifiée : {{ user.isVerified }}</div>
     <div>Display name : {{ user.displayName }}</div>
@@ -16,5 +15,13 @@
             {{ role }} - 
         {% endfor %}
     </div>
+
+    <h2>Mes articles</h2>
+    <ul>
+        {% for post in user.posts %}
+            <li>{{ post.title }}</li> 
+        {% endfor %}
+    </ul>
+
 
 {% endblock %}

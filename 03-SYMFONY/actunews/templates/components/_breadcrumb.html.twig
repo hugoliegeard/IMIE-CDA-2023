@@ -2,9 +2,10 @@
     <div>
         <h2 class="main-content-title tx-24 mg-b-5">{% block title %}{% endblock %}</h2>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">{% block module %}{% endblock %}</li>
-            <li class="breadcrumb-item active" aria-current="page">{% block action %}{% endblock %}</li>
+            <li class="breadcrumb-item">{% block modul2e %}{% endblock %}</li>
+            <li class="breadcrumb-item active" aria-current="page">{% block action2 %}{% endblock %}</li>
         </ol>
+        {% block module %}{% endblock %} / {% block action %}{% endblock %}
     </div>
     {# <div class="d-flex">
                             <div class="justify-content-center">

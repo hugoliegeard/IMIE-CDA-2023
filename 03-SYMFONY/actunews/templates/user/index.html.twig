@@ -2,9 +2,9 @@
 
 {% block final_stylesheets %}
 		<!-- DATA TABLE CSS -->
-		<link href="{{ asset('assets/plugins/datatable/css/dataTables.bootstrap5.css') }}" rel="stylesheet" />
-		<link href="{{ asset('assets/plugins/datatable/css/buttons.bootstrap5.min.css') }}"  rel="stylesheet">
-		<link href="{{ asset('assets/plugins/datatable/css/responsive.bootstrap5.css') }}" rel="stylesheet" />
+		<link href="{{ asset('spruha/assets/plugins/datatable/css/dataTables.bootstrap5.css') }}" rel="stylesheet" />
+		<link href="{{ asset('spruha/assets/plugins/datatable/css/buttons.bootstrap5.min.css') }}"  rel="stylesheet">
+		<link href="{{ asset('spruha/assets/plugins/datatable/css/responsive.bootstrap5.css') }}" rel="stylesheet" />
 {% endblock %}
 
 {% block title %}Liste des utilisateurs{% endblock %}
@@ -45,7 +45,9 @@
 											<td>{{ user.email }}</td>
 											<td>{{ user.isVerified == false ? 'Non vérifiée' : 'Vérifiée' }}</td>
 											<td>{{ user.posts | length }}</td>
-											<td></td>
+											<td>
+												<a href="{{ path('admin_user_delete', {id: user.id}) }}" class="btn btn-primary btn-sm" onclick="return confirm('Etes-vous certain ?')">Supprimer</a>
+											</td>
 										</tr>
 									{% endfor %}
 
@@ -62,18 +64,18 @@
 
 {% block final_javascripts %}
 <!-- Internal Data Table js -->
-		<script src="{{ asset('assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/js/dataTables.buttons.min.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/js/buttons.bootstrap5.min.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/js/jszip.min.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/pdfmake/pdfmake.min.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/pdfmake/vfs_fonts.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/js/buttons.html5.min.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/js/buttons.print.min.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/js/buttons.colVis.min.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/dataTables.responsive.min.js') }}"></script>
-		<script src="{{ asset('assets/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
-		<script src="{{ asset('assets/js/table-data.js') }}"></script>
-		<script src="{{ asset('assets/js/select2.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/js/dataTables.buttons.min.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/js/buttons.bootstrap5.min.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/js/jszip.min.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/pdfmake/pdfmake.min.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/pdfmake/vfs_fonts.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/js/buttons.html5.min.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/js/buttons.print.min.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/js/buttons.colVis.min.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+		<script src="{{ asset('spruha/assets/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+		<script src="{{ asset('spruha/assets/js/table-data.js') }}"></script>
+		<script src="{{ asset('spruha/assets/js/select2.js') }}"></script>
 {% endblock %}

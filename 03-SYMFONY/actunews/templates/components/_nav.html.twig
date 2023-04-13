@@ -4,10 +4,10 @@
 
             <div class="sidemenu-logo">
                 <a class="main-logo" href="index.html">
-                    <img src="{{ asset('assets/img/brand/logo-light.png') }}" class="header-brand-img desktop-logo" alt="logo">
-                    <img src="{{ asset('assets/img/brand/icon-light.png') }}" class="header-brand-img icon-logo" alt="logo">
-                    <img src="{{ asset('assets/img/brand/logo.png') }}" class="header-brand-img desktop-logo theme-logo" alt="logo">
-                    <img src="{{ asset('assets/img/brand/icon.png') }}" class="header-brand-img icon-logo theme-logo" alt="logo">
+                    <img src="{{ asset('spruha/assets/img/brand/logo-light.png') }}" class="header-brand-img desktop-logo" alt="logo">
+                    <img src="{{ asset('spruha/assets/img/brand/icon-light.png') }}" class="header-brand-img icon-logo" alt="logo">
+                    <img src="{{ asset('spruha/assets/img/brand/logo.png') }}" class="header-brand-img desktop-logo theme-logo" alt="logo">
+                    <img src="{{ asset('spruha/assets/img/brand/icon.png') }}" class="header-brand-img icon-logo theme-logo" alt="logo">
                 </a>
             </div>
 
@@ -26,13 +26,13 @@
                         </a>
                     </li>
 
+                    {% if is_granted("ROLE_ADMIN") %}
                     <li class="nav-item">
                         <a class="nav-link with-sub" href="javascript:void(0)">
                             <span class="shape1"></span>
                             <span class="shape2"></span>
                             <i  class="ti-wallet sidemenu-icon menu-icon "></i>
                             <span class="sidemenu-label">Utilisateurs</span>
-									</span>
                             <i class="angle fe fe-chevron-right"></i>
                         </a>
                         <ul class="nav-sub">
@@ -43,6 +43,7 @@
                             -->
                         </ul>
                     </li>
+                    {% endif %}
 
                     <li class="nav-item">
                         <a class="nav-link with-sub" href="javascript:void(0)">
@@ -50,7 +51,6 @@
                             <span class="shape2"></span>
                             <i  class="ti-wallet sidemenu-icon menu-icon "></i>
                             <span class="sidemenu-label">Catégories</span>
-									</span>
                             <i class="angle fe fe-chevron-right"></i>
                         </a>
                         <ul class="nav-sub">
@@ -60,19 +60,34 @@
                         </ul>
                     </li>
 
+                    {% if is_granted("ROLE_ADMIN") %}
                     <li class="nav-item">
                         <a class="nav-link with-sub" href="javascript:void(0)">
                             <span class="shape1"></span>
                             <span class="shape2"></span>
                             <i  class="ti-wallet sidemenu-icon menu-icon "></i>
                             <span class="sidemenu-label">Articles</span>
-									</span>
                             <i class="angle fe fe-chevron-right"></i>
                         </a>
                         <ul class="nav-sub">
                             <li class="side-menu-label1"><a href="javascript:void(0)">Articles</a></li>
                             <li class="nav-sub-item"> <a class="nav-sub-link" href="{{ path('admin_post_index')}}">Afficher</a></li>
                             <li class="nav-sub-item"><a class="nav-sub-link" href="{{ path('admin_post_add')}}">Créer</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <a class="nav-link with-sub" href="javascript:void(0)">
+                            <span class="shape1"></span>
+                            <span class="shape2"></span>
+                            <i  class="ti-wallet sidemenu-icon menu-icon "></i>
+                            <span class="sidemenu-label">Commentaires</span>
+                            <i class="angle fe fe-chevron-right"></i>
+                        </a>
+                        <ul class="nav-sub">
+                            <li class="side-menu-label1"><a href="javascript:void(0)">Commentaires</a></li>
+                            <li class="nav-sub-item"> <a class="nav-sub-link" href="{{ path('admin_comment_index')}}">Afficher</a></li>
                         </ul>
                     </li>
 

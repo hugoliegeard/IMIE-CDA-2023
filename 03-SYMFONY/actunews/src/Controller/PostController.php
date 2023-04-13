@@ -5,12 +5,14 @@ namespace App\Controller;
 use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Doctrine\Persistence\ManagerRegistry;
 
+#[IsGranted('ROLE_ADMIN')]
 #[Route('/admin/post', name: 'admin_post_')]
 class PostController extends AbstractController
 {
@@ -44,6 +46,7 @@ class PostController extends AbstractController
 
         return $this->render('post/add.html.twig', [
             'formu' => $form->createView(),
+            'h1' => "Création d'un article",
         ]);
     }
 
@@ -64,6 +67,7 @@ class PostController extends AbstractController
 
         return $this->render('post/add.html.twig', [
             'formu' => $form->createView(),
+            'h1' => "Modification d'un article",
         ]);
     }
 
