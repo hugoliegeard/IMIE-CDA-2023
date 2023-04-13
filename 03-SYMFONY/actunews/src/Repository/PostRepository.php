@@ -91,4 +91,13 @@ class PostRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+
+    public function nbPosts()
+    {
+        return $this->createQueryBuilder('p')
+            ->select('count(p.id)')
+            ->getQuery()
+            ->getSingleScalarResult()
+        ;
+    }
 }

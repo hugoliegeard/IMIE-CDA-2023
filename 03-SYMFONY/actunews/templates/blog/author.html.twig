@@ -1,0 +1,51 @@
+{% extends 'clean.html.twig' %}
+
+{% block title %}Page test liste{% endblock %}
+
+{% block content %}
+
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('{{ asset('clean/assets/img/home.jpg') }}')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>{{ sitename }}</h1>
+                        <span class="subheading">{{ author.displayName }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+
+            <h2>Articles de l'auteur : {{ author.displayName }}</h2>
+
+            {% for post in author.posts %}
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <a href="{{ path('fiche', {slug: post.slug}) }}">
+                        <h2 class="post-title">{{ post.title }}</h2>
+                        <img src="{{ post.image }}">
+                        <h3 class="post-subtitle">{{ post.content | u.truncate(150, '...') | raw }}</h3>
+                    </a>
+                    <p class="post-meta">
+                        Posted by
+                        <a href="{{ path('posts_author', {id: post.user.id}) }}">{{ post.user.displayName }}</a>
+                        {{ post.createdAt | ago }}
+                    </p>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+            {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

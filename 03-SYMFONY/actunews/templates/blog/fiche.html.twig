@@ -1,0 +1,81 @@
+{% extends 'clean.html.twig' %}
+
+{% block title %}Page test fiche{% endblock %}
+
+{% block content %}
+
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('{{ post.image }}')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>{{ post.title }}</h1>
+                        <!--
+                        <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+                        -->
+                        <span class="meta">
+                            Posted by
+                            <a href="{{ path('posts_author', {id: post.user.id}) }}">{{ post.user.displayName }}</a>
+                            {{ post.createdAt | ago }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}       
+
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger" role="alert">{{ message }}</div>
+    {% endfor %}       
+
+    <!--
+    <h2>{{ post.title }}</h2>
+    <div>Rédigé par :  {{ post.user.displayName }}{# dump(post.user) #}</div>
+    <div>Rangé dans : {{ post.category }}</div>
+    <img src="{{ post.image }}" width="200">
+    <div>{{ post.createdAt | ago }}</div>
+    -->
+    
+    <!-- Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    
+                    <div>{{ post.content | raw }}</div>
+                    
+                    <h2>Les commentaires</h2>
+                    
+                    {% if post.comments|length == 0 %}
+                        <div>Soyez le premier à commenter cet article !</div>
+                    {% else %}
+                        <ul>
+                            {% for comment in post.comments %}
+                                <li>
+                                    "{{ comment.content }}" écrit par {{ comment.user.displayName }} le {{ comment.createdAt|date }} 
+                                    {% if comment.user == app.user %}
+                                        <a href="{{ path('comment_delete', {id: comment.id}) }}" onclick="return confirm('Etes-vous certain ?')">Supprimer</a>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% if is_granted("ROLE_USER") %}
+                        {{ form(formu) }}
+                    {% endif %}
+                </div>
+            </div>
+        
+        </div>
+        
+
+    </article>
+
+
+{% endblock %}
