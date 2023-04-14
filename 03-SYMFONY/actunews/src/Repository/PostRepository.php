@@ -100,4 +100,22 @@ class PostRepository extends ServiceEntityRepository
             ->getSingleScalarResult()
         ;
     }
+
+    public function nbAllSubjects(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT
+            (SELECT COUNT(*) FROM user) as nbusers,
+            (SELECT COUNT(*) FROM comment) as nbcomments,
+            (SELECT COUNT(*) FROM post) as nbposts,
+            (SELECT COUNT(*) FROM category) as nbcategories
+            ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery(/*['price' => $price]*/);
+
+        // returns an array of arrays (i.e. a raw data set)
+        return $resultSet->fetchAllAssociative();
+    }
 }

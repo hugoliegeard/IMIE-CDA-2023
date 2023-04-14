@@ -17,22 +17,27 @@ class DashboardController extends AbstractController
     # https://localhost:8000/admin
     public function home(
         PostRepository $postRepository,
-        CommentRepository $commentRepository,
-        UserRepository $userRepository,
-        CategoryRepository $categoryRepository)
+        CommentRepository $commentRepository
+        //UserRepository $userRepository,
+        //CategoryRepository $categoryRepository
+        )
     {
-        $nbPosts = $postRepository->nbPosts();
-        $nbUsers = $userRepository->nbUsers();
-        $nbCategories = $categoryRepository->nbCategories();
-        $nbComments = $commentRepository->nbComments();
+        //$nbPosts = $postRepository->nbPosts();
+        //$nbUsers = $userRepository->nbUsers();
+        //$nbCategories = $categoryRepository->nbCategories();
+        //$nbComments = $commentRepository->nbComments();
+        
         $comments = $commentRepository->findBy([], ['createdAt' => 'DESC'], 3);
+
+        $counts = $postRepository->nbAllSubjects();
+        //dd($counts);
 
         //dd($nbPosts);
         return $this->render('dashboard/dashboard.html.twig', [
-            'nbPosts' => $nbPosts,
-            'nbUsers' => $nbUsers,
-            'nbCategories' => $nbCategories,
-            'nbComments' => $nbComments,
+            'nbPosts' => $counts[0]['nbposts'],
+            'nbUsers' => $counts[0]['nbusers'],
+            'nbCategories' => $counts[0]['nbcategories'],
+            'nbComments' => $counts[0]['nbcomments'],
             'comments' => $comments,
         ]);
         //return $this->json(['username' => 'jane.doe']);
