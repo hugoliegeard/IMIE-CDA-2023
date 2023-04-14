@@ -6,6 +6,21 @@
 
 {% block content %}
 
-    {{ form(formu) }}
+    {# form(formu) #}
+
+    {{ form_start(formu) }}
+        {{ form_errors(formu) }}
+
+        {{ form_row(formu.category) }}
+
+        <div class="form-check form-switch">
+        {{ form_row(formu.active) }}
+        </div>
+
+        {{ form_row(formu.title) }}
+        {{ form_row(formu.content) }}
+        {{ form_row(formu.image) }}
+
+    {{ form_end(formu) }}
 
 {% endblock %}
