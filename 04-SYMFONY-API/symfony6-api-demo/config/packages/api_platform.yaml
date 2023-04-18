@@ -1,0 +1,4 @@
+# api/config/packages/api_platform.yaml
+api_platform:
+    defaults:
+        pagination_items_per_page: 10
