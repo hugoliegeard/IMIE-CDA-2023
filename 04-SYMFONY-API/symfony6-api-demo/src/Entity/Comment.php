@@ -11,11 +11,15 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Put;
+//use ApiPlatform\Metadata\Post;
 use Doctrine\DBAL\Types\Types;
+use ApiPlatform\Metadata\Delete;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use function Symfony\Component\String\u;
 use ApiPlatform\Metadata\ApiResource;
+use function Symfony\Component\String\u;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Defines the properties of the Comment entity to represent the blog comments.
@@ -30,6 +34,10 @@ use ApiPlatform\Metadata\ApiResource;
 #[ORM\Entity]
 #[ORM\Table(name: 'symfony_demo_comment')]
 #[ApiResource]
+#[Get]
+#[\ApiPlatform\Metadata\Post(security: "is_granted('ROLE_USER')")]
+#[Put(security: "is_granted('ROLE_ADMIN') or object.author == user")]
+#[Delete(security: "is_granted('ROLE_ADMIN') or object.author == user")]
 class Comment
 {
     #[ORM\Id]
@@ -51,7 +59,7 @@ class Comment
 
     #[ORM\ManyToOne(targetEntity: User::class)]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $author = null;
+    public ?User $author = null;
 
     public function __construct()
     {

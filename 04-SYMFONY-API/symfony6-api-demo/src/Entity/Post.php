@@ -11,11 +11,16 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Put;
+//use ApiPlatform\Metadata\Post;
 use Doctrine\DBAL\Types\Types;
+use ApiPlatform\Metadata\Delete;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PostRepository;
 use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
@@ -39,6 +44,11 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 #[UniqueEntity(fields: ['slug'], errorPath: 'title', message: 'post.slug_unique')]
 #[ApiResource(paginationItemsPerPage: 5)]
 #[ApiFilter(SearchFilter::class, properties: ['id' => 'exact', 'title' => 'partial'])]
+#[Get]
+#[GetCollection]
+#[\ApiPlatform\Metadata\Post(security: "is_granted('ROLE_USER')")]
+#[Put(security: "is_granted('ROLE_ADMIN') or object == user")]
+#[Delete(security: "is_granted('ROLE_ADMIN') or object == user")]
 class Post
 {
     #[ORM\Id]

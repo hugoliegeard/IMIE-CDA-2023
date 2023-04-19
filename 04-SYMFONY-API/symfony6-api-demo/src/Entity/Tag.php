@@ -11,9 +11,11 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\Get;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
 
 /**
  * Defines the properties of the Tag entity to represent the post tags.
@@ -25,6 +27,8 @@ use ApiPlatform\Metadata\ApiResource;
 #[ORM\Entity]
 #[ORM\Table(name: 'symfony_demo_tag')]
 #[ApiResource]
+#[Get]
+#[GetCollection]
 class Tag implements \JsonSerializable
 {
     #[ORM\Id]

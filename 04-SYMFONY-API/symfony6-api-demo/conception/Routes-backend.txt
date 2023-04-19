@@ -1,0 +1,18 @@
+_api_/comments/{id}{._format}_get         GET        PUBLIC             Commentaire détaillé
+_api_/comments{._format}_post             POST       USER               Ajouter un commentaire
+_api_/comments/{id}{._format}_put         PUT        ADMIN ou OWNER     Modifier son commentaire
+_api_/comments/{id}{._format}_delete      DELETE     ADMIN ou OWNER     Supprimer son commentaire
+
+_api_/posts/{id}{._format}_get            GET        PUBLIC             Article détaillé
+_api_/posts{._format}_get_collection      GET        PUBLIC             Page d'accueil
+_api_/posts{._format}_post                POST       users              Proposition d'article
+_api_/posts/{id}{._format}_put            PUT        ADMIN ou OWNER     Modifier son article
+_api_/posts/{id}{._format}_delete         DELETE     ADMIN or OWNER     Supprimer son article
+
+_api_/tags/{id}{._format}_get             GET        PUBLIC             Affichage d'un tag
+_api_/tags{._format}_get_collection       GET        PUBLIC             Ex : liste de tags pour filtre
+
+_api_/users/{id}{._format}_get            GET        ADMIN or OWNER     Me
+_api_/users{._format}_post                POST       PUBLIC             Register
+_api_/users/{id}{._format}_put            PUT        ADMIN or OWNER     Modifier mon profil
+_api_/users/{id}{._format}_delete         DELETE     ADMIN or OWNER     Supprimer mon compte

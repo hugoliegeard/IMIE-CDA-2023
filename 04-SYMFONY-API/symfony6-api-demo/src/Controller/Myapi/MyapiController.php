@@ -15,8 +15,8 @@ class MyapiController extends AbstractController
     public function index(PostRepository $pr): JsonResponse
     {
         $posts = $pr->findAll();
-        phpinfo();
-        dd($posts);
+        //phpinfo();
+        //dd($posts);
         return $this->json($posts, Response::HTTP_OK);
     }
 
