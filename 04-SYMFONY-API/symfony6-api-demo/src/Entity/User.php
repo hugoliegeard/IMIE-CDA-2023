@@ -16,10 +16,12 @@ use ApiPlatform\Metadata\Put;
 use ApiPlatform\Metadata\Post;
 use Doctrine\DBAL\Types\Types;
 use ApiPlatform\Metadata\Delete;
+use App\Controller\MeController;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\GetCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -38,7 +40,20 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 #[ORM\Table(name: 'symfony_demo_user')]
 #[ApiResource(security: "is_granted('ROLE_USER')")]
 #[Get(security: "is_granted('ROLE_ADMIN') or object == user")]
-//#[GetCollection]
+/*
+#[GetCollection(
+    uriTemplate: "/me",
+    controller: MeController::class,
+    security: "is_granted('ROLE_USER')",
+    name: 'me')]
+*/
+#[GetCollection(
+    uriTemplate: "/me",
+    controller: MeController::class,
+    /*security: "is_granted('ROLE_USER')",
+    name: 'me'
+*/
+)]
 #[Post(security: "is_granted('PUBLIC_ACCESS')")]
 #[Put(security: "is_granted('ROLE_ADMIN') or object == user")]
 //#[Put(security: "is_granted(object == user")]
@@ -52,6 +67,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: Types::STRING)]
     #[Assert\NotBlank]
+    #[Groups(['read:post:collection','read:post:item'])]
     private ?string $fullName = null;
 
     #[ORM\Column(type: Types::STRING, unique: true)]

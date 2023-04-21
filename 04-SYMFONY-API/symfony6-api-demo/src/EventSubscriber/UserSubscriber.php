@@ -2,10 +2,11 @@
 namespace App\EventSubscriber;
 
 use App\Entity\User;
-use Doctrine\Bundle\DoctrineBundle\EventSubscriber\EventSubscriberInterface;
 use Doctrine\ORM\Events;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Doctrine\Bundle\DoctrineBundle\EventSubscriber\EventSubscriberInterface;
 
 class UserSubscriber implements EventSubscriberInterface
 {
@@ -19,10 +20,17 @@ class UserSubscriber implements EventSubscriberInterface
 
     public function getSubscribedEvents(): array
     {
+        
         return [
             // On défini le ou les événements sur lesquels on veut s'accrocher
             Events::prePersist
         ];
+        
+        /*return [
+            'prePersist' => 'onPrePersist',
+        ];
+        */
+
     }
 
     // On défini la méthode prévue pour le code à exécuter
@@ -32,7 +40,7 @@ class UserSubscriber implements EventSubscriberInterface
         $entity = $args->getObject();
 
         // Si l'intance concernée est de type User
-        if ($entity instanceof User) {
+        if ($entity instanceof User && strlen($entity->getPassword()) < 50) {
             // On procède au hashage du password envoyé en clair
             $entity->setPassword(
                 $this->passwordHasher->hashPassword(

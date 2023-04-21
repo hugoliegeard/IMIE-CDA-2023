@@ -24,6 +24,7 @@ use ApiPlatform\Metadata\GetCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
@@ -42,10 +43,14 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 #[ORM\Table(name: 'symfony_demo_post')]
 #[UniqueEntity(fields: ['slug'], errorPath: 'title', message: 'post.slug_unique')]
-#[ApiResource(paginationItemsPerPage: 5)]
+#[ApiResource(
+    paginationItemsPerPage: 5,
+    //normalizationContext: ['groups' => ['read:post:collection']]
+)]
 #[ApiFilter(SearchFilter::class, properties: ['id' => 'exact', 'title' => 'partial'])]
-#[Get]
-#[GetCollection]
+#[Get(normalizationContext: ['groups' => ['read:post:item']])]
+//#[GetCollection]
+#[GetCollection(normalizationContext: ['groups' => ['read:post:collection']])]
 #[\ApiPlatform\Metadata\Post(security: "is_granted('ROLE_USER')")]
 #[Put(security: "is_granted('ROLE_ADMIN') or object == user")]
 #[Delete(security: "is_granted('ROLE_ADMIN') or object == user")]
@@ -54,30 +59,37 @@ class Post
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: Types::INTEGER)]
+    #[Groups(['read:post:collection','read:post:item'])]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::STRING)]
     #[Assert\NotBlank]
+    #[Groups(['read:post:collection','read:post:item'])]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::STRING)]
+    #[Groups(['read:post:collection'])]
     private ?string $slug = null;
 
     #[ORM\Column(type: Types::STRING)]
     #[Assert\NotBlank(message: 'post.blank_summary')]
     #[Assert\Length(max: 255)]
+    #[Groups(['read:post:collection'])]
     private ?string $summary = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank(message: 'post.blank_content')]
     #[Assert\Length(min: 10, minMessage: 'post.too_short_content')]
+    #[Groups(['read:post:item'])]
     private ?string $content = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups(['read:post:collection','read:post:item'])]
     private \DateTime $publishedAt;
 
     #[ORM\ManyToOne(targetEntity: User::class)]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['read:post:collection','read:post:item'])]
     private ?User $author = null;
 
     /**
@@ -85,6 +97,7 @@ class Post
      */
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'post', orphanRemoval: true, cascade: ['persist'])]
     #[ORM\OrderBy(['publishedAt' => 'DESC'])]
+    #[Groups(['read:post:item'])]
     private Collection $comments;
 
     /**
@@ -94,6 +107,7 @@ class Post
     #[ORM\JoinTable(name: 'symfony_demo_post_tag')]
     #[ORM\OrderBy(['name' => 'ASC'])]
     #[Assert\Count(max: 4, maxMessage: 'post.too_many_tags')]
+    #[Groups(['read:post:collection','read:post:item'])]
     private Collection $tags;
 
     public function __construct()

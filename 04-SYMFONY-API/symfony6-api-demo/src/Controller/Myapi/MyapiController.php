@@ -25,4 +25,12 @@ class MyapiController extends AbstractController
     {
         return $this->json($post, Response::HTTP_OK);
     }
+
+    #[Route('/me', name: 'me', methods: ['GET'])]
+    public function me(): JsonResponse
+    {
+        $user = $this->getUser();
+        $user->setPassword("Caché");
+        return $this->json($user, Response::HTTP_OK);
+    }
 }

@@ -16,6 +16,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\GetCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Defines the properties of the Tag entity to represent the post tags.
@@ -37,6 +38,7 @@ class Tag implements \JsonSerializable
     private ?int $id = null;
 
     #[ORM\Column(type: Types::STRING, unique: true)]
+    #[Groups(['read:post:collection','read:post:item'])]
     private readonly string $name;
 
     public function __construct(string $name)

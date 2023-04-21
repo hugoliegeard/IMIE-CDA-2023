@@ -19,6 +19,7 @@ use ApiPlatform\Metadata\Delete;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 use function Symfony\Component\String\u;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -33,11 +34,60 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 #[ORM\Entity]
 #[ORM\Table(name: 'symfony_demo_comment')]
+/*
 #[ApiResource]
 #[Get]
 #[\ApiPlatform\Metadata\Post(security: "is_granted('ROLE_USER')")]
 #[Put(security: "is_granted('ROLE_ADMIN') or object.author == user")]
 #[Delete(security: "is_granted('ROLE_ADMIN') or object.author == user")]
+*/
+
+
+/*
+#[ApiResource(
+    operations: [
+        new Get(),
+        new Put(
+            security: "is_granted('ROLE_ADMIN') or object.author == user", 
+            securityMessage: 'Utilisateur non propriétaire du commentaire ni admin !'
+        ),
+        new \ApiPlatform\Metadata\Post(
+            security: "is_granted('ROLE_USER')", 
+            securityMessage: 'Utilisateur non identifié !'
+        ),
+        new Delete(
+            security: "is_granted('ROLE_ADMIN') or object.author == user", 
+            securityMessage: 'Utilisateur non propriétaire du commentaire ni admin !'
+        )
+    ]
+)]
+*/
+
+/*
+#[ApiResource(
+    operations: [
+        new Get(),
+        new \ApiPlatform\Metadata\Post(
+            security: 'is_granted("comment_new", object)', 
+            securityMessage: 'Utilisateur non identifié !'
+        ),
+        new Put(
+            security: 'is_granted("comment_edit", object)', 
+            securityMessage: 'Utilisateur non propriétaire du commentaire ni admin !'
+        ),
+        new Delete(
+            security: 'is_granted("comment_delete", object)', 
+            securityMessage: 'Utilisateur non propriétaire du commentaire ni admin !'
+        )
+    ]
+)]
+*/
+#[ApiResource]
+#[Get]
+//#[Post(security: "is_granted('comment_new', object)")]
+#[\ApiPlatform\Metadata\Post(security: "is_granted('ROLE_USER')")]
+#[Put(security: "is_granted('comment_edit', object)")]
+#[Delete(security: "is_granted('comment_delete', object)")]
 class Comment
 {
     #[ORM\Id]
@@ -52,13 +102,16 @@ class Comment
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank(message: 'comment.blank')]
     #[Assert\Length(min: 5, minMessage: 'comment.too_short', max: 10000, maxMessage: 'comment.too_long')]
+    #[Groups(['read:post:item'])]
     private ?string $content = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups(['read:post:item'])]
     private \DateTime $publishedAt;
 
     #[ORM\ManyToOne(targetEntity: User::class)]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['read:post:item'])]
     public ?User $author = null;
 
     public function __construct()
