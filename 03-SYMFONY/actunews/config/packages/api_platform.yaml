@@ -1,0 +1,11 @@
+# api/config/packages/api_platform.yaml
+api_platform:
+    defaults:
+        pagination_items_per_page: 10
+
+    swagger:
+         api_keys:
+             JWT:
+                name: Authorization
+                type: header
+                

@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\CommentRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use App\Repository\CommentRepository;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
+#[ApiResource]
 class Comment
 {
     #[ORM\Id]
