@@ -84,8 +84,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 */
 #[ApiResource]
 #[Get]
-//#[Post(security: "is_granted('comment_new', object)")]
-#[\ApiPlatform\Metadata\Post(security: "is_granted('ROLE_USER')")]
+#[\ApiPlatform\Metadata\Post(securityPostDenormalize: "is_granted('comment_new', object)")]
 #[Put(security: "is_granted('comment_edit', object)")]
 #[Delete(security: "is_granted('comment_delete', object)")]
 class Comment
