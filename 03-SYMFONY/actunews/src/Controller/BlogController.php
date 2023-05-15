@@ -10,6 +10,7 @@ use App\Form\CommentType;
 use App\Repository\PostRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,7 +33,12 @@ class BlogController extends AbstractController
     }
 
     #[Route('/blog', name: 'liste')]
-    public function liste(PostRepository $postRepository, CategoryRepository $categoryRepository): Response
+    public function liste(
+        PostRepository $postRepository, 
+        CategoryRepository $categoryRepository,
+        PaginatorInterface $paginatorInterface,
+        Request $request
+    ): Response
     {
         //session_start();
         //dd($_SESSION);
@@ -40,7 +46,22 @@ class BlogController extends AbstractController
         $categories = $categoryRepository->findAll();
         //dd($categories);
         //$posts = $postRepository->findAll();
-        $posts = $postRepository->findLastPosts();
+        
+        
+        /* PAGINATION D'AFFICHAGE
+        $data = $postRepository->findLastPosts();
+        $posts = $paginatorInterface->paginate(
+            $data,
+            $request->query->getInt('page', 1),
+            3
+        );
+        */
+
+        $posts = $paginatorInterface->paginate(
+            $postRepository->findLastPostsPaginated(),
+            $request->query->getInt('page', 1),
+            3
+        );
         //dd($posts);
 
         $oldPosts = $postRepository->findOldPosts(2);

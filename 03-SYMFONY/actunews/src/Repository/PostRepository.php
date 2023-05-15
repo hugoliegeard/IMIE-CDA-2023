@@ -92,6 +92,16 @@ class PostRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findLastPostsPaginated()
+        {
+            return $this->createQueryBuilder('p')
+                ->andWhere('p.active = :active')
+                ->setParameter('active', true)
+                ->orderBy('p.createdAt', 'DESC')
+                ->getQuery()
+            ;
+        }
+    
     public function nbPosts()
     {
         return $this->createQueryBuilder('p')
@@ -113,7 +123,7 @@ class PostRepository extends ServiceEntityRepository
             (SELECT COUNT(*) FROM category) as nbcategories
             ';
         $stmt = $conn->prepare($sql);
-        $resultSet = $stmt->executeQuery(/*['price' => $price]*/);
+        $resultSet = $stmt->executeQuery();
 
         // returns an array of arrays (i.e. a raw data set)
         return $resultSet->fetchAllAssociative();

@@ -76,6 +76,17 @@
         -->
     {% endfor %}
 
+    {{ knp_pagination_render(posts) }}
+
+    {# sorting of properties based on query components #}
+    <button{% if posts.isSorted('p.id') %} class="btn btn-danger"{% else %} class="btn btn-primary"{% endif %}>
+        {{ knp_pagination_sortable(posts, 'Id', 'p.id') }}
+    </button>
+    <button{% if posts.isSorted('p.title') %} class="btn btn-danger"{% else %} class="btn btn-primary"{% endif %}>
+        {{ knp_pagination_sortable(posts, 'Title', 'p.title') }}
+    </button>
+
+
     <h2>Liste des anciens articles</h2>
     {% for oldPost in oldPosts %}
         <a href="{{ path('fiche', {slug: oldPost.slug}) }}">
