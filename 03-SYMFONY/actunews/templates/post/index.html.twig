@@ -41,7 +41,7 @@
 									{% for post in posts %}
 										<tr>
 											<td>{{ post.id }}</td>
-											<td><img src="{{ post.image }}"></td>
+											<td><img src="{{ vich_uploader_asset(post) }}"></td>
 											<td>{{ post.title }}</td>
 											<td>{{ post.createdAt | date }}</td>
 											<td>{{ post.user.displayName }}</td>
@@ -64,7 +64,7 @@
     <!--
     {% for post in posts %}
         <h2>{{ post.title }}</h2>
-        <img src="{{ post.image }}">
+        <img src="{# post.image #}">
         {{ post.content }}
     {% endfor %}
     -->

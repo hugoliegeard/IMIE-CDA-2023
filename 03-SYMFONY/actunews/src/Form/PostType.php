@@ -8,6 +8,7 @@ use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PostType extends AbstractType
 {
@@ -17,7 +18,17 @@ class PostType extends AbstractType
             ->add('title')
             //->add('slug')
             ->add('content', CKEditorType::class)
-            ->add('image')
+            //->add('image')
+            ->add('imageFile', VichImageType::class, [
+                'required' => false,
+                'allow_delete' => true,
+                'delete_label' => 'Supprimer',
+                'download_label' => 'Récupérer',
+                'download_uri' => true,
+                'image_uri' => true,
+                //'imagine_pattern' => '...',
+                'asset_helper' => true,
+            ])
             //->add('createdAt')
             ->add('active')
             //->add('user')
