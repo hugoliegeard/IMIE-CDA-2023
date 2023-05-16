@@ -37,7 +37,7 @@ class CommentController extends AbstractController
         $comments = $paginatorInterface->paginate(
             $cr->findAllCommentsPaginated(),
             $request->query->getInt('page', 1),
-            2
+            4
         );
 
         //dd($comments);
