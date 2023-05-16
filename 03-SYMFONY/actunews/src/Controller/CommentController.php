@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Comment;
 use App\Repository\CommentRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,6 +22,28 @@ class CommentController extends AbstractController
         $comments = $cr->findAll();
 
         return $this->render('comment/index.html.twig', [
+            'comments' => $comments,
+        ]);
+    }
+
+    #[IsGranted('ROLE_MODERATEUR')]
+    #[Route('/admin/comment2', name: 'admin_comment_index2')]
+    public function index2(
+        CommentRepository $cr,
+        PaginatorInterface $paginatorInterface,
+        Request $request
+    ) : Response
+    {
+        $comments = $paginatorInterface->paginate(
+            $cr->findAllCommentsPaginated(),
+            $request->query->getInt('page', 1),
+            2
+        );
+
+        //dd($comments);
+
+
+        return $this->render('comment/index2.html.twig', [
             'comments' => $comments,
         ]);
     }

@@ -57,6 +57,7 @@ class BlogController extends AbstractController
         );
         */
 
+        /* PAGINATION DOCTRINE */
         $posts = $paginatorInterface->paginate(
             $postRepository->findLastPostsPaginated(),
             $request->query->getInt('page', 1),

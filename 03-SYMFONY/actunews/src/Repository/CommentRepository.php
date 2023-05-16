@@ -64,6 +64,14 @@ class CommentRepository extends ServiceEntityRepository
 //        ;
 //    }
 
+    public function findAllCommentsPaginated()
+    {
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.createdAt', 'DESC')
+            ->getQuery()
+        ;
+    }
+
     public function nbComments()
     {
         return $this->createQueryBuilder('c')
