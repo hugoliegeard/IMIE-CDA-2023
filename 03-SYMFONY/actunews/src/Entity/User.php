@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Metadata\Patch;
+use ApiPlatform\Metadata\Put;
 use ApiPlatform\Metadata\Delete;
-use App\Controller\Api\MeController;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
+use App\Controller\Api\MeController;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\GetCollection;
 use Doctrine\Common\Collections\Collection;
@@ -23,11 +23,12 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
         new GetCollection(
             uriTemplate: '/me',
             controller: MeController::class,
-            security: "is_granted('USER_VIEW', object)",
+            //security: "is_granted('USER_VIEW', object)",
+            security: "is_granted('ROLE_USER')",
             name: 'me'
         ),
         new \ApiPlatform\Metadata\Post(),
-        new Patch(security: "is_granted('USER_EDIT', object)"),
+        new Put(security: "is_granted('USER_EDIT', object)"),
         new Delete(security: "is_granted('USER_DELETE', object)")
     ]
 )]

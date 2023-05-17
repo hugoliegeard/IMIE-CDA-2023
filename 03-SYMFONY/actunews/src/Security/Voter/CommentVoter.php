@@ -25,7 +25,6 @@ class CommentVoter extends Voter
     protected function voteOnAttribute(string $attribute, mixed $subject, TokenInterface $token): bool
     {
         $user = $token->getUser();
-
         // if the user is anonymous, do not grant access
         if (!$user instanceof UserInterface) {
             return false;
@@ -33,10 +32,15 @@ class CommentVoter extends Voter
 
         switch ($attribute) {
             case self::NEW:
-                return $this->security->isGranted('IS_AUTHENTICATED_FULLY');
+                //return $this->security->isGranted('IS_AUTHENTICATED_FULLY');
+                return $this->security->isGranted('ROLE_USER');
                 break;
             case self::DELETE:
-                return $this->security->isGranted('IS_AUTHENTICATED_FULLY');
+                return
+                    $this->security->isGranted('ROLE_ADMIN') 
+                    or 
+                    $subject->getUser() == $user;
+                //return $this->security->isGranted('IS_AUTHENTICATED_FULLY');
                 break;
         }
 

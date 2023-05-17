@@ -19,6 +19,7 @@ class UserVoter extends Voter
 
     protected function supports(string $attribute, mixed $subject): bool
     {
+        //dd($subject instanceof \App\Entity\User);
         return in_array($attribute, [self::EDIT, self::VIEW, self::DELETE])
             && $subject instanceof \App\Entity\User;
     }
@@ -26,6 +27,7 @@ class UserVoter extends Voter
     protected function voteOnAttribute(string $attribute, mixed $subject, TokenInterface $token): bool
     {
         $user = $token->getUser();
+        //dd($user);
 
         // if the user is anonymous, do not grant access
         if (!$user instanceof UserInterface) {
@@ -34,13 +36,13 @@ class UserVoter extends Voter
 
         switch ($attribute) {
             case self::VIEW:
-                return $this->security->isGranted('IS_AUTHENTICATED_FULLY');
+                return $this->security->isGranted('ROLE_USER');
                 break;
             case self::EDIT:
-                return $this->security->isGranted('IS_AUTHENTICATED_FULLY');
+                return $this->security->isGranted('ROLE_USER');
                 break;
             case self::DELETE:
-                return $this->security->isGranted('IS_AUTHENTICATED_FULLY');
+                return $this->security->isGranted('ROLE_USER');
                 break;
             }
 

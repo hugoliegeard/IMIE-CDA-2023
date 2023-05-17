@@ -17,7 +17,8 @@ use Symfony\Component\Serializer\Annotation\Groups;
     operations: [
         new Get(),
         new GetCollection(),
-        new \ApiPlatform\Metadata\Post(security: "is_granted('COMMENT_NEW', object)"),
+        //new \ApiPlatform\Metadata\Post(security: "is_granted('COMMENT_NEW', object)"),
+        new \ApiPlatform\Metadata\Post(security: "is_granted('ROLE_USER')"), 
         new Delete(security: "is_granted('COMMENT_DELETE', object)")
     ]
 )]
