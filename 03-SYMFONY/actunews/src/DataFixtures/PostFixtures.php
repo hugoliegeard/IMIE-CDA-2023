@@ -27,6 +27,18 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             4 => [
                 'name' => 'banniere-6461ea3f6502d962198629.jpg',
             ],
+            5 => [
+                'name' => 'surf1.jpg',
+            ],
+            6 => [
+                'name' => 'surf2.jpg',
+            ],
+            7 => [
+                'name' => 'body1.jpg',
+            ],
+            8 => [
+                'name' => 'body2.jpg',
+            ],
         ];
 
         for($i = 1; $i <= 100; $i++) {
@@ -44,8 +56,8 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 ->setActive($faker->numberBetween(0,1));
             $post->setImageSize(1000);
             
-            $post->setImageName($photos[$faker->numberBetween(1,4)]['name']);
-            
+            $post->setImageName($photos[$faker->numberBetween(1,8)]['name']);
+
             /*
             $urlUploadedImage = $faker->image('public/images/posts');
             //dd($urlUploadedImage);

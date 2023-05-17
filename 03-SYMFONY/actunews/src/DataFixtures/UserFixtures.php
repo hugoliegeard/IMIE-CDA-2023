@@ -29,8 +29,8 @@ class UserFixtures extends Fixture
 
         for($i = 1; $i <= 30; $i++) {
             $user = new User();
-            $user->setEmail($faker->email)
-                ->setDisplayName(/*$faker->lastName() . ' ' . */$faker->firstName())
+            $user->setEmail($faker->email())
+                ->setDisplayName($faker->name())
                 ->setRoles(['ROLE_USER'])
                 ->setPassword($this->encoder->hashPassword($user, '123456'))
                 ->setIsVerified(true);

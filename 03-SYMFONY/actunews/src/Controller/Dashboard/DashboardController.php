@@ -27,7 +27,7 @@ class DashboardController extends AbstractController
         //$nbCategories = $categoryRepository->nbCategories();
         //$nbComments = $commentRepository->nbComments();
         
-        $comments = $commentRepository->findBy([], ['createdAt' => 'DESC'], 3);
+        $comments = $commentRepository->findBy([], ['createdAt' => 'DESC']);
 
         $counts = $postRepository->nbAllSubjects();
         //dd($counts);

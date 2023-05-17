@@ -35,7 +35,7 @@ class CategoryFixtures extends Fixture
             $category = new Category();
             $parent = $this->getReference('category_' . $faker->numberBetween(1, 3));
             $category->setParent($parent);
-            $category->setName(ucfirst($faker->word(1)));
+            $category->setName(ucfirst($faker->word()));
             $manager->persist($category);
 
             $this->addReference('category_' . $i, $category);

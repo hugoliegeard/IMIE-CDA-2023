@@ -53,7 +53,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
-    #[ORM\Column(length: 20)]
+    #[ORM\Column(length: 40)]
     #[Groups(['post:read'])]
     private ?string $DisplayName = null;
 

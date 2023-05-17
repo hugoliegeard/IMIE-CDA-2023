@@ -61,7 +61,7 @@ class BlogController extends AbstractController
         $posts = $paginatorInterface->paginate(
             $postRepository->findLastPostsPaginated(),
             $request->query->getInt('page', 1),
-            3
+            5
         );
         //dd($posts);
 
