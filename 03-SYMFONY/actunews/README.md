@@ -31,3 +31,12 @@ Lors du clone, il faut :
     php bin/console doctrine:schema:drop --force
     php bin/console doctrine:schema:update --force
     php bin/console doctrine:fixtures:load
+
+- Dans ces fixtures :
+    L'admin est :           Login = admin@mail.com  Password = 123456
+    Tous les autres users : Login = voir mails BD   Password = 123456
+
+Les Urls du projet :
+    http://localhost:8000/          Page Hello World
+    http://localhost:8000/blog      FrontOffice du blog
+    http://localhost:8000/admin     BackOffice du blog
