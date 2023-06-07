@@ -1,0 +1,53 @@
+<!--preload-->
+<div class="loader" id="page-loader">
+  <div class="loading-wrapper">
+  </div>
+</div>
+<!--menu mobile-->
+<nav class="menu-res hidden-lg hidden-md ">
+  <div class="menu-res-inner">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="business.html">BUSINESS</a></li>
+      <li><a href="reviews.html"> REVIEWS</a></li>
+      <li><a href="video.html"> VIDEOS</a></li>
+      <li><a href="computing.html"> COMPUTING</a></li>
+      <li><a href="mobile.html">MOBILE</a></li>
+      <li><a href="tech.html">TECH</a></li>
+      <li><a href="mobile.html">MOBILE</a></li>
+      <li>
+        <p>
+          <a href="#">PAGE</a>
+          <span class="open-submenu"><i class="fa fa-angle-down"></i></span>
+        </p>
+        <ul>
+          <li>
+            <a href="404.html">404</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact us</a>
+          </li>
+          <li>
+            <a href="article.html">Article Post</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="page">
+  <div class="container">
+    <app-header></app-header>
+    <div class="row">
+      <!-- colleft : contenu du site -->
+      <div class="col-md-8 col-sm-12">
+        <router-outlet></router-outlet>
+      </div>
+      <!-- colright : sidebar -->
+      <div class="col-md-4 col-sm-12">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+  </div> <!-- /.container -->
+  <app-footer></app-footer>
+</div> <!-- /.page -->
